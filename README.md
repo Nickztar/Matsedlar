@@ -12,10 +12,12 @@ npm run dev
 
 
 
-Sidor som jag planerar att använda:
+## Användbara sidor
 
 [Matsedlen](https://webmenu.foodit.se/)
+
 [Skolverket](https://www.skolverket.se/om-oss/oppna-data)
+
 [Icons](https://www.svelte-icons.gibdig.com/)
 
 
