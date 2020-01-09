@@ -1,6 +1,6 @@
 # Matsedlar
 
-Webapp för att hämta matsedlar för svenska skolor med hjälp av webscraping och api.
+Webapp för att hämta matsedlar för svenska skolor med hjälp av webscraping, api och [Svelte](https://svelte.dev/).
 
 Kör som developer genom:
 ```bash
