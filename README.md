@@ -22,6 +22,14 @@ npm run dev
 
 [Webscaper](https://webscraper.io/)
 
+[SvelteMaps](https://github.com/beyonk-adventures/svelte-googlemaps)
+
+[SvelteSelectMenu](https://github.com/rob-balfre/svelte-select)
+
+[CarouselSwipe](https://github.com/SharifClick/svelte-swipe)
+
+
+[SvelteResources](https://awesomeopensource.com/project/ryanatkn/awesome-svelte-resources#components-and-libraries)
 # Slutligt
 
 Planerar på att fixa domänet https://www.matsedlar.se
