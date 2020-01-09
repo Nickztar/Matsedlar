@@ -20,6 +20,7 @@ npm run dev
 
 [Icons](https://www.svelte-icons.gibdig.com/)
 
+[Webscaper](https://webscraper.io/)
 
 # Slutligt
 
