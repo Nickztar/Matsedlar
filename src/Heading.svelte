@@ -40,6 +40,7 @@
         padding: 10px 17px;
         margin: 0;
         align-self: center;
+        cursor: pointer;
         -webkit-box-shadow: 0px 0px 5px 0px var(--strong-shadow);
         -moz-box-shadow: 0px 0px 5px 0px var(--strong-shadow);
         box-shadow: 0px 0px 5px 0px var(--strong-shadow);

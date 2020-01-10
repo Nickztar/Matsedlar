@@ -1,15 +1,16 @@
 <script>
 	import Heading from './Heading.svelte';
 	import SelectCard from './SelectSchool/SelectCard.svelte';
-	let selectedSchool = true;
+	import WeekCarousel from './ShowSchool/WeekCarousel.svelte';
+	import { hasSchool } from './stores.js';
 </script>
 
-<Heading hasSchool={selectedSchool}/>
+<Heading {hasSchool}/>
 <main>
-	{#if !selectedSchool}
+	{#if !hasSchool}
 		<SelectCard />
 	{:else}
-		<SelectCard />
+		<WeekCarousel />
 	{/if}
 </main>
 
@@ -24,6 +25,7 @@
 		align-items: center;
 		justify-content: center;
 		display: flex;
+		flex-direction: column;
 		position: absolute;
 		top: 12vh;
 		background: var(--primary);
@@ -33,7 +35,7 @@
 	@media (prefers-color-scheme: light){
 		:global(:root) {
 			--light: #363636;
-			--secondary: #C8C8A9;
+			--secondary: rgb(221, 211, 211);
 			--primary: #83AF9B;
 		}
 	}
