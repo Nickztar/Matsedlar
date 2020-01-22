@@ -20,7 +20,8 @@
             perView: 1,
             focusAt: "center",
             animationDuration: 500,
-            peek: 35
+            peek: 35,
+            dragThreshold: 100
         }).mount({ Controls, Keyboard });
         window.onresize = () => {
             if (window.innerWidth > 700){
@@ -68,7 +69,7 @@
 
 <style>
     .mainGlide{
-        height: 85vh;
+        margin-top: -22vh;
         width: 80%;
         transition: all 2s;
     }

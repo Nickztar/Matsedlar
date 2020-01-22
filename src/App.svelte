@@ -28,8 +28,6 @@
 		justify-content: center;
 		display: flex;
 		flex-direction: column;
-		position: absolute;
-		top: 12vh;
 		background: var(--primary);
 		width: 100vw;
 		height: 100%;
