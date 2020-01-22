@@ -92,10 +92,10 @@
     }
     @media screen and (max-width: 400px){
         .glide__arrow--next {
-            right: 15%;
+            right: 20px;
         }
         .glide__arrow--prev{
-            left: 15%;
+            left: 20px;
         }
     }
 </style>
