@@ -57,7 +57,6 @@
     <GlideArrow />
 </div>
 
-
 <style>
     .mainGlide{
         width: 80%;

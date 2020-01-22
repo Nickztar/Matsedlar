@@ -34,7 +34,7 @@
     .contain{
         width: 80%;
         height: 65%;
-        margin: 0 auto;
+        margin: auto;
     }
     .conFind{
         margin: 4vh 0;
