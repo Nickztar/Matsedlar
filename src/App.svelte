@@ -21,7 +21,6 @@
 		--priority: rgb(255, 187, 51);
 		--strong-shadow: rgba(27,27,27,0.9);
 		--primary: rgb(51, 51, 57);
-		
 	}
 	main{
 		align-items: center;
@@ -34,12 +33,12 @@
 		position: absolute;
 		bottom: 0;
 	}
-	@media (prefers-color-scheme: light){
+	/* @media (prefers-color-scheme: light){
 		:global(:root) {
 			--light: #363636;
 			--priority: #3d3939d0;
 			--secondary: rgba(235, 229, 229, 0.90);
 			--primary: rgb(149, 218, 187);
 		}
-	}
+	} */
 </style>
