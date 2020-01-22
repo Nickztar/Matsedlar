@@ -34,12 +34,13 @@
         padding-left: 0.5rem;
     }
     header {
-        position: relative;
+        position: fixed;
+        top: 0;
         z-index: 1000;
         display: flex;
         text-align: center;
         justify-content: space-between;
-        height: 12vh;
+        height: 10vh;
         width: 100%;
         background: rgb(14, 14, 14);
     }
@@ -68,11 +69,5 @@
         color: var(--priority);
         text-align: center;
         margin: 0;
-    }
-    
-    @media screen and (max-height:700px){
-        header{
-            height: 9vh;
-        }
     }
 </style>

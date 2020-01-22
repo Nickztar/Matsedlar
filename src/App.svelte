@@ -29,8 +29,10 @@
 		flex-direction: column;
 		background: var(--primary);
 		width: 100vw;
-		height: 100%;
+		height: 90vh;
 		overflow: hidden;
+		position: absolute;
+		bottom: 0;
 	}
 	@media (prefers-color-scheme: light){
 		:global(:root) {
