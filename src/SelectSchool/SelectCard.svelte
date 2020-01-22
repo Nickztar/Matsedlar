@@ -34,8 +34,7 @@
     .contain{
         width: 80%;
         height: 65%;
-        justify-self: center;
-        transition: all 2s;
+        margin: 0 auto;
     }
     .conFind{
         margin: 4vh 0;

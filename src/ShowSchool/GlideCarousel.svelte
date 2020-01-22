@@ -69,9 +69,7 @@
 
 <style>
     .mainGlide{
-        margin-top: -22vh;
         width: 80%;
-        transition: all 2s;
     }
     .glide__slides{
         overflow: visible;

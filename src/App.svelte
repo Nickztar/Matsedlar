@@ -25,7 +25,6 @@
 	}
 	main{
 		align-items: center;
-		justify-content: center;
 		display: flex;
 		flex-direction: column;
 		background: var(--primary);
