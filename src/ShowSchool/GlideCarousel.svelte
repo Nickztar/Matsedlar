@@ -70,7 +70,7 @@
 <style>
     .mainGlide{
         width: 80%;
-        margin-top: 8vh;
+        margin-top: 7vh;
     }
     .glide__slides{
         overflow: visible;
@@ -79,7 +79,7 @@
         overflow: visible;
     }
     .glide__arrow{
-        margin-top: 10vh;
+        margin-top: 8vh;
     }
     .glide__arrow--next {
         right: 30%;
