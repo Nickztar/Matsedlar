@@ -1,14 +1,20 @@
 <script>
-    export let hasSchool;
+    import GiKnifeFork from 'svelte-icons/gi/GiKnifeFork.svelte'
+    import { hasSchool } from './stores.js';
     function selectSchool(){
-        //Allow user to select new school
+        hasSchool.set(false);
     }
 </script>
 
 <header>
-    <h1>Matsedlar</h1>
-    {#if hasSchool}
-        <button on:click={selectSchool}><h2>Byt skola</h2></button>
+    <div class="info">
+        <div class="icon">
+            <GiKnifeFork />
+        </div>
+        <h1>Matsedlar</h1>
+    </div>
+    {#if $hasSchool}
+        <button on:click={selectSchool}><h3>Byt skola</h3></button>
     {/if}
 </header>
 
@@ -16,17 +22,26 @@
     * {
         font-family: 'Roboto', sans-serif;
     }
+    .icon{
+        align-self: center;
+        height: 6vh;
+        width: 6vh;
+        color: var(--priority);
+    }
+    .info{
+        width: 50%;
+        display: flex;
+        padding-left: 0.5rem;
+    }
     header {
         position: relative;
         z-index: 1000;
         display: flex;
         text-align: center;
         justify-content: space-between;
-        padding: 0 1.2rem;
         height: 12vh;
         width: 100%;
-        background: var(--primary);
-        box-shadow: 0px 5px 7px 2px var(--light);
+        background: rgb(14, 14, 14);
     }
     h1 {
         align-self: center;
@@ -34,22 +49,23 @@
     }
     button {
         border: none;
-        background: var(--secondary);
+        background: none;
         border-radius: 10px;
         height: 60%;
-        padding: 10px 17px;
         margin: 0;
+        width: auto;
+        margin-right: 2vw;
         align-self: center;
         cursor: pointer;
-        -webkit-box-shadow: 0px 0px 5px 0px var(--strong-shadow);
-        -moz-box-shadow: 0px 0px 5px 0px var(--strong-shadow);
-        box-shadow: 0px 0px 5px 0px var(--strong-shadow);
     }
     button:active{
-        background: var(--active);
+        background: none;
     }
-    h2 {
-        color: var(--light);
+    button:hover{
+        opacity: 0.9;
+    }
+    h3 {
+        color: var(--priority);
         text-align: center;
         margin: 0;
     }

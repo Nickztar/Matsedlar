@@ -1,9 +1,10 @@
-<script>
-    let day = "Torsdag";
-    let date = '2 JAN';
-    let food = ["Köttfärslimpa med rosepepparsås med potatis & lingonsylt", "Köttfärslimpa med rosepepparsås med potatis & lingonsylt"];
+<!-- <script>
+    import { fly, fade } from 'svelte/transition';
+    export let data;
+    const day = data.day;
+    const date = data.date;
 </script>
-<div class="card">
+<div class="card" out:fly={{x:200, duration:1000}}>
     <div class="container">
         <div class="day">
             <h4>{day}</h4>
@@ -21,10 +22,10 @@
         font-family: 'Roboto', sans-serif;
     }
     .card{
+        grid-area: left;
         align-self: center;
         position: relative;
         z-index: 10;
-        width: 16%;
         margin-right: -3vw;
         height: 90%;
         border-radius: 0.5rem;
@@ -34,6 +35,6 @@
     }
     .container{
         text-align: left;
-        margin: 5vh 0 0 1vh
+        margin: 5vh 0 0 2vh
     }
-</style>
+</style> -->

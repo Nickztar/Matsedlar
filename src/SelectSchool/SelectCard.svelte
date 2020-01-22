@@ -2,13 +2,13 @@
     import FaMapPin from 'svelte-icons/fa/FaMapPin.svelte'
     import FaArrowRight from 'svelte-icons/fa/FaArrowRight.svelte'
     import Select from 'svelte-select';
+    import { hasSchool } from '../stores.js';
     let items = ["Kattegattgymnasiet","Söndrumsskolan","Sannarpsgymnasiet"];
-
     function locateSchool(){
 
     }
     function setSchool(){
-
+        hasSchool.set(true);
     }
 </script>
 
@@ -16,14 +16,15 @@
     <h1>Hitta din skola</h1>
     <div class="conFind">
         <div class="conMenu">
-            <Select {items}/>
+            <Select {items} placeholder={'Välj skola...'}/>
         </div>
+        <button id="submit" class="findLoc" on:click={setSchool}><div class="icon"><FaArrowRight /></div></button>
     </div>
     <div class="conButton">
         <button id="locate" class="find" on:click={locateSchool}><div class="icon"><FaMapPin /></div></button>
-        <button id="submit" class="find" on:click={setSchool}><div class="icon"><FaArrowRight /></div></button>
     </div>
 </div>
+
 
 <style>
     * {
@@ -33,6 +34,7 @@
     .contain{
         width: 80%;
         height: 65%;
+        transition: all 2s;
     }
     .conFind{
         margin: 4vh 0;
@@ -43,21 +45,22 @@
     h1{
         text-align: center;
         margin: 0 auto;
-        color: var(--light);
+        color: var(--priority);
     }
     .conMenu{
         --padding: 0 20px;
         --background: var(--secondary);
         --listBackground: var(--secondary);
+        --itemHoverBG: var(--secondary);
         color: var(--light);
-        --placeholderColor: var(--light);
-        --borderRadius: 2rem;
-        border-radius: 2rem;
+        --inputColor: var(--light);
+        --placeholderColor: var(--priority);
         --listShadow: 0 0 5px var(--strong-shadow);
         box-shadow: 0 0 5px var(--strong-shadow);
         --border: none;
-        width: 60%;
-        --height: 12vh;
+        width: 65%;
+        --height: 10vh;
+        --inputFontSize: 1.2rem
     }
     .conButton{
         display: flex;
@@ -78,7 +81,12 @@
         border-radius: 50%;
         box-shadow: 0 0 5px var(--strong-shadow);
     }
-    #locate{
-        margin-right: 2vh;
+    .findLoc{
+        display: block;
+        border: none;
+        background: var(--secondary);
+        height: 10vh;
+        width: 10vh;
+        box-shadow: 0 0 5px var(--strong-shadow);
     }
 </style>

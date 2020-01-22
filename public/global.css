@@ -1,5 +1,9 @@
 *{
 	box-sizing: border-box;
+	
+}
+*::-webkit-scrollbar {
+	display: none;
 }
 html, body {
 	position: relative;
@@ -68,3 +72,15 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+.glide__slide--active {
+	transform: scale(1.2);
+	z-index: 1000;
+	filter: grayscale(0%) blur(0) !important;
+}
+.glide__slide {
+	filter: grayscale(100%) blur(1px);
+}
+.glide__bullet--active{
+	background-color: var(--priority);
+}
+

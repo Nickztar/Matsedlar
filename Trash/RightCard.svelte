@@ -1,7 +1,7 @@
-<script>
-    let day = "Lördag";
-    let date = '4 JAN';
-    let food = ["Köttfärslimpa med rosepepparsås med potatis & lingonsylt", "Köttfärslimpa med rosepepparsås med potatis & lingonsylt"];
+<!-- <script>
+    export let data;
+    const day = data.day;
+    const date = data.date;
 </script>
 <div class="card">
     <div class="container">
@@ -21,9 +21,9 @@
         font-family: 'Roboto', sans-serif;
     }
     .card{
+        grid-area: right;
         position: relative;
         z-index: 10;
-        width: 16%;
         margin-left: -3vw;
         align-self: center;
         height: 90%;
@@ -33,9 +33,9 @@
         transform: rotateY(20deg);
     }
     .container{
-        margin: 5vh 1vh 0 0;
+        margin: 5vh 2vh 0 0;
         position: absolute;
         right: 0;
         text-align: right;
     }
-</style>
+</style> -->
