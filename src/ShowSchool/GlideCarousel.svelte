@@ -21,7 +21,7 @@
             startAt: 0,
             perView: 1,
             focusAt: "center",
-            animationDuration: 500,
+            animationDuration: 350,
             peek: 35,
             dragThreshold: 100
         }).mount({ Controls, Keyboard, Swipe });
