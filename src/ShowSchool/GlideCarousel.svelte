@@ -70,6 +70,7 @@
 <style>
     .mainGlide{
         width: 80%;
+        margin-top: 8vh;
     }
     .glide__slides{
         overflow: visible;
