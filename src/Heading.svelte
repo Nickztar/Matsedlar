@@ -69,4 +69,10 @@
         text-align: center;
         margin: 0;
     }
+    
+    @media screen and (max-height:700px){
+        header{
+            height: 9vh;
+        }
+    }
 </style>
