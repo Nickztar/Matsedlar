@@ -29,7 +29,7 @@
 		flex-direction: column;
 		background: var(--primary);
 		width: 100vw;
-		height: 90vh;
+		height: 90%;
 		overflow: hidden;
 		position: absolute;
 		bottom: 0;

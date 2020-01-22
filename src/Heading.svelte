@@ -40,7 +40,7 @@
         display: flex;
         text-align: center;
         justify-content: space-between;
-        height: 10vh;
+        height: 10%;
         width: 100%;
         background: rgb(14, 14, 14);
     }
