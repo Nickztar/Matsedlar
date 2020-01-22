@@ -1,7 +1,7 @@
 <script>
     import '../../node_modules/@glidejs/glide/dist/css/glide.core.min.css';
     import '../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css';
-    import Glide, { Controls, Keyboard } from '@glidejs/glide/dist/glide.modular.esm';
+    import Glide, { Controls, Keyboard, Swipe } from '@glidejs/glide/dist/glide.modular.esm';
     import CenterCard from './Cards/CenterCard.svelte';
     import GlideArrow from './GlideArrows.svelte';
     import GlideBullets from './GlideBullets.svelte';
@@ -24,7 +24,7 @@
             animationDuration: 500,
             peek: 35,
             dragThreshold: 100
-        }).mount({ Controls, Keyboard });
+        }).mount({ Controls, Keyboard, Swipe });
         window.onresize = () => {
             if (window.innerWidth > 700){
                 glide.update({perView: 2, peek: 35});
