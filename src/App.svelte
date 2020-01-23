@@ -2,6 +2,7 @@
 	import Heading from './Heading.svelte';
 	import SelectCard from './SelectSchool/SelectCard.svelte';
 	import GlideCarousel from './ShowSchool/GlideCarousel.svelte';
+	import Async from './ShowSchool/Async.svelte';
 	import { hasSchool } from './stores.js';
 </script>
 
@@ -10,7 +11,7 @@
 	{#if !$hasSchool}
 		<SelectCard />
 	{:else}
-		<GlideCarousel />
+		<Async />
 	{/if}
 </main>
 

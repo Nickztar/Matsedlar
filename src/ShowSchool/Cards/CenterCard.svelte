@@ -66,7 +66,7 @@
         margin: 3vh auto;
         max-height: 17vh;
         padding: 1rem;
-        font-size: 1.3rem;
+        font-size: 1rem;
         border-radius: 0.5rem;
         text-align: center;
         background: var(--priority);
