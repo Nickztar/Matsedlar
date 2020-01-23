@@ -25,16 +25,9 @@
             peek: 35,
             dragThreshold: 100
         }).mount({ Controls, Keyboard, Swipe });
+        reactivity();
         window.onresize = () => {
-            if (window.innerWidth > 700){
-                glide.update({perView: 2, peek: 35});
-            }
-            else if (window.innerWidth < 550){
-                glide.update({perView: 1, peek: 35});
-            }
-            else {
-                glide.update({peek: 100});
-            }
+            reactivity();
         };
     });
     gotoIndex.subscribe(val => {
@@ -42,7 +35,17 @@
             glide.go(`=${val}`);
         }
     });
-        
+    function reactivity(){
+        if (window.innerWidth > 700){
+            glide.update({perView: 2, peek: 35});
+        }
+        else if (window.innerWidth < 550){
+            glide.update({perView: 1, peek: 35});
+        }
+        else {
+            glide.update({peek: 100});
+        }
+    }
 </script>
 
 <div class="glide mainGlide">
