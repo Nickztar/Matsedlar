@@ -6,13 +6,14 @@
     import GlideArrow from './GlideArrows.svelte';
     import GlideBullets from './GlideBullets.svelte';
     import { onMount } from 'svelte';
-    import { gotoIndex } from '../stores.js';
+    import { gotoIndex, todayDate } from '../stores.js';
     export let foodData;
+    const startAt = setStartDate();
     let glide;
     onMount(() => {
         glide = new Glide('.glide', {
             type: 'slider',
-            startAt: 0,
+            startAt: startAt,
             perView: 1,
             focusAt: "center",
             animationDuration: 350,
@@ -39,6 +40,16 @@
         else {
             glide.update({peek: 100});
         }
+    }
+    function setStartDate(){
+        const trimDate = $todayDate.substring(0,6);
+        let startPoint = 0;
+        foodData.forEach((el, index) => {
+            if(el.date == trimDate){
+                startPoint = index;
+            }
+        });
+        return startPoint;
     }
 </script>
 
