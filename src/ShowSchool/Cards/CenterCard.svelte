@@ -69,7 +69,7 @@
         padding: 1rem;
         font-size: 1rem;
         text-align: center;
-        border-radius: 0.5rem;
+        border-radius: 0.3rem;
         background: var(--priority);
         color: var(--text);
         word-wrap: break-word;
