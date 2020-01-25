@@ -36,6 +36,7 @@
     }
     h2 {
         color: var(--priority);
+        margin-top: 1vh;
     }
     .card{
         grid-area: center;
@@ -57,7 +58,7 @@
         justify-content: center;
     }
     .food{
-        margin-top: 7vh;
+        margin-top: 6vh;
         width: 80%;
         height: 40vh;
     }
