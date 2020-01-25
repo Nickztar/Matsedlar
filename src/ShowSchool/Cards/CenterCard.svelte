@@ -3,11 +3,32 @@
     import { gotoIndex } from '../../stores.js';
     export let data;
     export let index;
-    const day = data.day;
+    const day = formatDay(data.day);
     const date = data.date;
     const food = data.foods;
+    
     function handleIndex(i){
         gotoIndex.set(i);
+    }
+    function formatDay(smallDay){
+        let day = '';
+        switch (smallDay){
+            case 'MÅN':
+                day = 'MÅNDAG';
+                break;
+            case 'TIS':
+                day = 'TISDAG';
+                break;
+            case 'ONS':
+                day = 'ONSDAG';
+                break;
+            case 'TOR':
+                day = 'TORSDAG';
+                break;
+            default:
+                day = 'FREDAG';
+        }
+        return day;
     }
 </script>
 <div class="card" on:click={handleIndex(index)}>
@@ -73,10 +94,5 @@
         background: var(--priority);
         color: var(--text);
         word-wrap: break-word;
-    }
-    @media (prefers-color-scheme: light){
-        .foods{
-            color: #000;
-        }
     }
 </style>
