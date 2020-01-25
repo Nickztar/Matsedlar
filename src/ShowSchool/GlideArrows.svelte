@@ -14,7 +14,7 @@
         display: flex;
         height: 10vh;
         width: 60%;
-        margin: 10vh auto 0;
+        margin: 6vh auto 0;
         align-items: center;
         justify-content: space-between;
     }
