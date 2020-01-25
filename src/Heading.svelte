@@ -42,7 +42,7 @@
         justify-content: space-between;
         height: 10%;
         width: 100%;
-        background: rgb(14, 14, 14);
+        background: var(--header);
     }
     h1 {
         align-self: center;

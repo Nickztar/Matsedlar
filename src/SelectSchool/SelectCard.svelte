@@ -64,6 +64,7 @@
     }
     .conButton{
         display: flex;
+        display: none;
         justify-content: center
     }
     .icon{

@@ -1,7 +1,6 @@
 <script>
 	import Heading from './Heading.svelte';
 	import SelectCard from './SelectSchool/SelectCard.svelte';
-	import GlideCarousel from './ShowSchool/GlideCarousel.svelte';
 	import Async from './ShowSchool/Async.svelte';
 	import { hasSchool } from './stores.js';
 </script>
@@ -17,11 +16,15 @@
 
 <style>
 	:global(:root) {
-		--light: #eee;   
-		--secondary: rgba(41, 41, 41, 0.7);
+		--light: #eee;
+		--lightBorder:rgba(255, 255, 255, 0.5);   
+		--lightArrow:rgba(255, 255, 255);   
+		--secondary: rgba(41, 41, 41, 0.9);
 		--priority: rgb(255, 187, 51);
 		--strong-shadow: rgba(27,27,27,0.9);
 		--primary: rgb(51, 51, 57);
+		--text: #000;
+		--header: rgb(14, 14, 14); 
 	}
 	main{
 		align-items: center;
@@ -35,12 +38,15 @@
 		bottom: 0;
 	}
 	/* Disabled for now, fix colors */
-	/* @media (prefers-color-scheme: light){
+	@media (prefers-color-scheme: light){
 		:global(:root) {
-			--light: #363636;
-			--priority: #3d3939d0;
-			--secondary: rgba(235, 229, 229, 0.90);
-			--primary: rgb(149, 218, 187);
+			--light: rgb(14, 14, 14);
+			--priority: #ff2727d0;
+			--secondary: rgb(214, 214, 214);
+			--primary: #fff;
+			--lightBorder:rgb(155, 153, 153, 0.7);   
+			--lightArrow:rgb(109, 109, 109);
+			--header: rgb(88, 88, 88); 
 		}
-	} */ 
+	} 
 </style>

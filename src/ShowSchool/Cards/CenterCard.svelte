@@ -67,10 +67,15 @@
         max-height: 17vh;
         padding: 1rem;
         font-size: 1rem;
-        border-radius: 0.5rem;
         text-align: center;
+        border-radius: 0.5rem;
         background: var(--priority);
-        color: var(--primary);
+        color: var(--text);
         word-wrap: break-word;
+    }
+    @media (prefers-color-scheme: light){
+        .foods{
+            color: #000;
+        }
     }
 </style>

@@ -21,4 +21,10 @@
         left: auto;
         transform: none;
     }
+    .glide__bullet{
+        background-color: var(--lightBorder);
+    }
+    .glide__bullet:hover, .glide__bullet:focus{
+        border: none;
+    }
 </style>
