@@ -70,4 +70,9 @@
         text-align: center;
         margin: 0;
     }
+    @media (prefers-color-scheme: light){
+        h3, .icon{
+            color: #fff;
+        }
+    }
 </style>

@@ -43,10 +43,10 @@
 			--light: rgb(14, 14, 14);
 			--priority: #ff2727d0;
 			--secondary: rgb(214, 214, 214);
-			--primary: #fff;
+			--primary: #eee;
 			--lightBorder:rgb(155, 153, 153, 0.7);   
 			--lightArrow:rgb(109, 109, 109);
-			--header: rgb(88, 88, 88); 
+			--header: #FF4C4Cd0; 
 		}
 	} 
 </style>
