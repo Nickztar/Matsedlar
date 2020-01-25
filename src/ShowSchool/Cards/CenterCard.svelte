@@ -67,9 +67,9 @@
         z-index: 20;
         width: 100%;
         height: 100%;
-        border-radius: 0.5rem;
+        border-radius: 0.2rem;
         background: var(--secondary);
-        box-shadow: 0 0 5px var(--strong-shadow);
+        box-shadow: 0 0 3px var(--strong-shadow);
     }
     .container{
         margin: 3vh auto 0;

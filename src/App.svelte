@@ -19,9 +19,9 @@
 		--light: #eee;
 		--lightBorder:rgba(255, 255, 255, 0.5);   
 		--lightArrow:rgba(255, 255, 255);   
-		--secondary: rgba(41, 41, 41, 0.9);
+		--secondary: rgba(41, 41, 41);
 		--priority: rgb(255, 187, 51);
-		--strong-shadow: rgba(27,27,27,0.9);
+		--strong-shadow: rgba(27,27,27);
 		--primary: rgb(51, 51, 57);
 		--text: #000;
 		--header: rgb(14, 14, 14); 
