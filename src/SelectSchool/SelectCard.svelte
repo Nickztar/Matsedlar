@@ -13,7 +13,7 @@
     }
     function setSchool(){
         if(selectedValue){
-            setCookie('school', JSON.stringify(selectedValue), 2);
+            setCookie('school', JSON.stringify(selectedValue), 365);
             selectedSchool.set(selectedValue);
             hasSchool.set(true);
         }
