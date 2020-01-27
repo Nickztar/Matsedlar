@@ -1,6 +1,7 @@
 <script>
     import GlideCarousel from './GlideCarousel.svelte';
     import Loading from '../Loading.svelte';
+    import Error from '../Error.svelte';
     import { selectedSchool } from '../stores.js';
     const foodData = getData();
     async function getData(){
@@ -19,5 +20,5 @@
 {:then data}
     <GlideCarousel foodData={data}/>
 {:catch error}
-    <h1>eoorooor</h1>
+    <Error/>
 {/await}
