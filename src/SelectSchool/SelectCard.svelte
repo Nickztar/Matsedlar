@@ -2,13 +2,27 @@
     import FaMapPin from 'svelte-icons/fa/FaMapPin.svelte'
     import FaArrowRight from 'svelte-icons/fa/FaArrowRight.svelte'
     import Select from 'svelte-select';
-    import { hasSchool } from '../stores.js';
-    let items = ["Kattegattgymnasiet","Söndrumsskolan","Sannarpsgymnasiet"];
+    import { hasSchool, selectedSchool } from '../stores.js';
+    const items = [
+        { value: 0, label: "Kattegattgymnasiet" },
+        { value: 1, label: "Sannarpsgymnasiet" }
+    ];
+    let selectedValue = null;
     function locateSchool(){
 
     }
     function setSchool(){
-        hasSchool.set(true);
+        if(selectedValue){
+            setCookie('school', selectedValue.value, 2);
+            selectedSchool.set(selectedValue.value);
+            hasSchool.set(true);
+        }
+    }
+    function setCookie(cname, cvalue, exdays) {
+        let d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 </script>
 
@@ -16,7 +30,7 @@
     <h1>Hitta din skola</h1>
     <div class="conFind">
         <div class="conMenu">
-            <Select {items} placeholder={'Välj skola...'}/>
+            <Select {items} bind:selectedValue placeholder={'Välj skola...'}/>
         </div>
         <button id="submit" class="findLoc" on:click={setSchool}><div class="icon"><FaArrowRight /></div></button>
     </div>
