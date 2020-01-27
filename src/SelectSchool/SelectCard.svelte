@@ -13,8 +13,8 @@
     }
     function setSchool(){
         if(selectedValue){
-            setCookie('school', selectedValue.value, 2);
-            selectedSchool.set(selectedValue.value);
+            setCookie('school', JSON.stringify(selectedValue), 2);
+            selectedSchool.set(selectedValue);
             hasSchool.set(true);
         }
     }

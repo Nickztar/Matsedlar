@@ -3,7 +3,7 @@ import { writable, readable } from 'svelte/store';
 export const hasSchool = new writable(testForSchool());
 export const gotoIndex = new writable(0);
 export const todayDate = new readable(getDate());
-export const selectedSchool = new writable(getCookie('school'));
+export const selectedSchool = new writable(JSON.parse(getCookie('school')));
 
 
 

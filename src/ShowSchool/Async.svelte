@@ -5,7 +5,7 @@
     import { selectedSchool } from '../stores.js';
     const foodData = getData();
     async function getData(){
-        const response = await fetch(`https://matsedlarna.herokuapp.com/${$selectedSchool}/0`);
+        const response = await fetch(`https://matsedlarna.herokuapp.com/${$selectedSchool.value}/0`);
         const json = await response.json();
         if (response.ok){
             return json;

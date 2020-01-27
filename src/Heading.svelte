@@ -1,6 +1,6 @@
 <script>
     import GiKnifeFork from 'svelte-icons/gi/GiKnifeFork.svelte'
-    import { hasSchool } from './stores.js';
+    import { hasSchool, selectedSchool } from './stores.js';
     function selectSchool(){
         hasSchool.set(false);
     }
@@ -11,7 +11,11 @@
         <div class="icon">
             <GiKnifeFork />
         </div>
-        <h1>Matsedlar</h1>
+        {#if $hasSchool}
+            <h1 title="{$selectedSchool.label}">{$selectedSchool.label}</h1>
+        {:else}
+            <h1>Matsedlar</h1>
+        {/if}
     </div>
     {#if $hasSchool}
         <button on:click={selectSchool}><h3>Byt skola</h3></button>
@@ -45,8 +49,14 @@
         background: var(--header);
     }
     h1 {
+        user-select: none;
+        text-align: left;
         align-self: center;
         color: var(--light);
+        white-space: nowrap;
+        overflow: hidden;
+        width: 94%;
+        text-overflow: ellipsis;
     }
     button {
         border: none;
