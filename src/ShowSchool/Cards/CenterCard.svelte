@@ -85,7 +85,7 @@
     }
     .foods{
         display: block;
-        margin: 3vh auto;
+        margin: 1.5vh auto;
         max-height: 17vh;
         padding: 1rem;
         font-size: 1rem;
