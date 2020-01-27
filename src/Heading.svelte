@@ -12,7 +12,7 @@
             <GiKnifeFork />
         </div>
         {#if $hasSchool}
-            <h1 title="{$selectedSchool.label}">{$selectedSchool.label}</h1>
+            <h1 title="{$selectedSchool.label}" class="schoolName">{$selectedSchool.label}</h1>
         {:else}
             <h1>Matsedlar</h1>
         {/if}
@@ -53,6 +53,9 @@
         text-align: left;
         align-self: center;
         color: var(--light);
+        
+    }
+    .schoolName{
         white-space: nowrap;
         overflow: hidden;
         width: 94%;
