@@ -3,7 +3,7 @@ import { writable, readable } from 'svelte/store';
 export const hasSchool = new writable(testForSchool());
 export const gotoIndex = new writable(0);
 export const todayDate = new readable(getDate());
-export const selectedSchool = new writable(JSON.parse(getCookie('school')));
+export const selectedSchool = new writable(getCookie('school'));
 
 
 
@@ -16,7 +16,7 @@ function getDate(){
     return today.toUpperCase();
 }
 function testForSchool(){
-    const cookies = JSON.parse(getCookie('school'));
+    const cookies = getCookie('school');
     if(cookies != "" || cookies == typeof(Object)){
         return true;
     }else{
@@ -33,7 +33,7 @@ function getCookie(cname) {
         c = c.substring(1);
       }
       if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
+        return JSON.parse(c.substring(name.length, c.length));
       }
     }
     return "";
