@@ -16,7 +16,8 @@ function getDate(){
     return today.toUpperCase();
 }
 function testForSchool(){
-    if(getCookie('school') != ""){
+    const cookies = JSON.parse(getCookie('school'));
+    if(cookies != "" || cookies == typeof(Object)){
         return true;
     }else{
         return false;
