@@ -51,6 +51,7 @@
         });
         return startPoint;
     }
+    
 </script>
 
 <div class="glide mainGlide">
