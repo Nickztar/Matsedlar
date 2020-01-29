@@ -6,7 +6,7 @@
     import GlideArrow from './GlideArrows.svelte';
     import GlideBullets from './GlideBullets.svelte';
     import { onMount } from 'svelte';
-    import { gotoIndex, todayDate } from '../stores.js';
+    import { gotoIndex, todayDate, requestedWeek } from '../stores.js';
     export let foodData;
     const startAt = setStartDate();
     let glide;
@@ -46,10 +46,18 @@
         let startPoint = 0;
         foodData.forEach((el, index) => {
             if(el.date == trimDate){
+                skipWeekEnd(el.day);
                 startPoint = index;
             }
         });
         return startPoint;
+    }
+    function skipWeekEnd(day){
+        if (day == 'LÖR' || day == 'SÖN'){
+            if ($requestedWeek == 0){
+                requestedWeek.set(1);
+            }
+        }
     }
 </script>
 

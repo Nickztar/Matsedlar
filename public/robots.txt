@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://matsedlar.se/sitemap.xml
