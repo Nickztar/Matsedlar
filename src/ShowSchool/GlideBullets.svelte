@@ -1,10 +1,10 @@
 <div class="bulletContainer">
     <div class="glide__bullets" data-glide-el="controls[nav]">
-        <button class="glide__bullet" data-glide-dir="=0"></button>
-        <button class="glide__bullet" data-glide-dir="=1"></button>
-        <button class="glide__bullet" data-glide-dir="=2"></button>
-        <button class="glide__bullet" data-glide-dir="=3"></button>
-        <button class="glide__bullet" data-glide-dir="=4"></button>
+        <button aria-label="Bullet point 0" class="glide__bullet" data-glide-dir="=0"></button>
+        <button aria-label="Bullet point 1" class="glide__bullet" data-glide-dir="=1"></button>
+        <button aria-label="Bullet point 2" class="glide__bullet" data-glide-dir="=2"></button>
+        <button aria-label="Bullet point 3" class="glide__bullet" data-glide-dir="=3"></button>
+        <button aria-label="Bullet point 4" class="glide__bullet" data-glide-dir="=4"></button>
     </div>
 </div>
 <style>

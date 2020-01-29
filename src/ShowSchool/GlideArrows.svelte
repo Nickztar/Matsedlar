@@ -13,10 +13,10 @@
 </script>
 
 <div class="glide__arrows" data-glide-el="controls">
-    <button on:click={handleWeekDown} class="icon week"><FaAngleDoubleLeft/></button>
-    <button class="glide__arrow glide__arrow--prev" data-glide-dir="<"><div class="icon"><FaAngleLeft/></div></button>
-    <button class="glide__arrow glide__arrow--next" data-glide-dir=">"><div class="icon"><FaAngleRight/></div></button>
-    <button on:click={handleWeekUp} class="icon week"><FaAngleDoubleRight/></button>
+    <button aria-label="Goto last week" on:click={handleWeekDown} class="icon week"><FaAngleDoubleLeft/></button>
+    <button aria-label="Goto last day" class="glide__arrow glide__arrow--prev" data-glide-dir="<"><div class="icon"><FaAngleLeft/></div></button>
+    <button aria-label="Goto next day" class="glide__arrow glide__arrow--next" data-glide-dir=">"><div class="icon"><FaAngleRight/></div></button>
+    <button aria-label="Goto next week" on:click={handleWeekUp} class="icon week"><FaAngleDoubleRight/></button>
 </div>
 
 <style>
