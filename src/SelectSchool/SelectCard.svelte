@@ -5,7 +5,13 @@
     import { hasSchool, selectedSchool } from '../stores.js';
     const items = [
         { value: 0, label: "Kattegattgymnasiet" },
-        { value: 1, label: "Sannarpsgymnasiet" }
+        { value: 1, label: "Sannarpsgymnasiet" },
+        { value: 0, label: "Jutarumsskolan"},
+        { value: 0, label: "Bäckagårds FSK"},
+        { value: 0, label: "Bäckagårdsskolan"},
+        { value: 0, label: "Centrumsskolan"},
+        { value: 0, label: "Lummeskolan"},
+        { value: 1, label: "Kristinehedsgymnasiet" }
     ];
     let selectedValue = null;
     function locateSchool(){
