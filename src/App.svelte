@@ -3,13 +3,10 @@
 	import SelectCard from './SelectSchool/SelectCard.svelte';
 	import Async from './ShowSchool/Async.svelte';
 	import { hasSchool } from './stores.js';
-	const preventTouch = e => {
-		e.preventDefault();
-	}
 </script>
 
 <Heading />
-<main on:touchmove={preventTouch}>
+<main>
 	{#if !$hasSchool}
 		<SelectCard />
 	{:else}
@@ -35,7 +32,9 @@
 		flex-direction: column;
 		background: var(--primary);
 		width: 100vw;
+		max-width: 100vw;
 		height: 90%;
+		max-height: 90vh;
 		overflow: hidden;
 		position: relative;
 		touch-action: none;
