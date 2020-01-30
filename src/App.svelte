@@ -36,7 +36,7 @@
 		overflow: hidden;
 		position: relative;
 		touch-action: none;
-		overscroll-behavior: contain;
+		overscroll-behavior-y: none;
 	}
 	/* Disabled for now, fix colors */
 	@media (prefers-color-scheme: light){
