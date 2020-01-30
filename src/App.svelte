@@ -5,15 +5,17 @@
 	import { hasSchool } from './stores.js';
 </script>
 
-<Heading />
-<main>
-	{#if !$hasSchool}
-		<SelectCard />
-	{:else}
-		<Async />
-	{/if}
-</main>
-
+<div class="bigWrap">
+	<Heading />
+	<main>
+		{#if !$hasSchool}
+			<SelectCard />
+		{:else}
+			<Async />
+		{/if}
+	</main>
+</div>
+		
 <style>
 	:global(:root) {
 		--light: #eee;
@@ -26,6 +28,10 @@
 		--text: #000;
 		--header: rgb(14, 14, 14); 
 	}
+	.bigWrap{
+		height: 100vh;
+		overflow: hidden;
+	}
 	main{
 		align-items: center;
 		display: flex;
@@ -34,8 +40,7 @@
 		width: 100vw;
 		height: 90%;
 		overflow: hidden;
-		position: sticky;
-		position: -webkit-sticky;
+		position: fixed;
 		top: 10%;
 	}
 	/* Disabled for now, fix colors */
