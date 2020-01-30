@@ -21,11 +21,9 @@ self.addEventListener('install', async e => {
 
 self.addEventListener('activate', async e => {
   const cacheKeys = await caches.keys();
-  console.log(cacheKeys, "good")
   const badCaches = cacheKeys.filter(key => {
     return key != staticCacheName && key != dynamicCacheName;
   });
-  console.log(badCaches, "bad")
   badCaches.forEach(async key => {
     await caches.delete(key);
   })
