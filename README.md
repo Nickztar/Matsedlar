@@ -20,21 +20,17 @@ npm run dev
 
 [Icons](https://www.svelte-icons.gibdig.com/)
 
-[Webscaper](https://webscraper.io/)
-
-[WebscrapeTutorial](https://medium.com/data-scraper-tips-tricks/scraping-data-with-javascript-in-3-minutes-8a7cf8275b31)
-
 [SvelteMaps](https://github.com/beyonk-adventures/svelte-googlemaps)
 
 [SvelteSelectMenu](https://github.com/rob-balfre/svelte-select)
-
-[CarouselSwipe](https://github.com/SharifClick/svelte-swipe)
 
 
 [SvelteResources](https://awesomeopensource.com/project/ryanatkn/awesome-svelte-resources#components-and-libraries)
 # Slutligt
 
-Planerar på att fixa domänet https://www.matsedlar.se
+https://www.matsedlar.se
+
+Nu tillgänglig som PWA!!!
 
 Tanken är att man ska välja skola genom att söka eller klicka genom options eller använda sin geolocation för att välja närmaste skola.
 
