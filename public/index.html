@@ -67,12 +67,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 	<script defer src='/build/bundle.js'></script>
 
-	<script>
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', function() {
-				navigator.serviceWorker.register('/sw.js');
-			});
-		}
+	<script language="javascript">
+		
 	</script>
 </head>
 
@@ -80,5 +76,15 @@
 </body>
 
 <noscript>Please enable javascript for this website to work!</noscript>
+
+<script>
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', function() {
+			navigator.serviceWorker.register('/sw.js');
+		});
+	}
+	document.body.addEventListener('touchmove', function(e){ e.preventDefault(); }); 
+	document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
+</script>
 
 </html>
