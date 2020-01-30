@@ -44,7 +44,7 @@
         display: flex;
         text-align: center;
         justify-content: space-between;
-        height: 10%;
+        height: 10vh;
         width: 100%;
         background: var(--header);
     }
