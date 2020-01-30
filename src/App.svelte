@@ -5,16 +5,14 @@
 	import { hasSchool } from './stores.js';
 </script>
 
-<div class="bigWrap">
-	<Heading />
-	<main>
-		{#if !$hasSchool}
-			<SelectCard />
-		{:else}
-			<Async />
-		{/if}
-	</main>
-</div>
+<Heading />
+<main>
+	{#if !$hasSchool}
+		<SelectCard />
+	{:else}
+		<Async />
+	{/if}
+</main>
 		
 <style>
 	:global(:root) {
@@ -28,21 +26,15 @@
 		--text: #000;
 		--header: rgb(14, 14, 14); 
 	}
-	.bigWrap{
-		height: 100vh;
-		overflow: hidden;
-	}
 	main{
 		align-items: center;
 		display: flex;
 		flex-direction: column;
 		background: var(--primary);
 		width: 100vw;
-		padding-top: 10vh;
-		height: 100%;
+		height: 90%;
 		overflow: hidden;
-		position: fixed;
-		top: 0;
+		position: relative;
 	}
 	/* Disabled for now, fix colors */
 	@media (prefers-color-scheme: light){

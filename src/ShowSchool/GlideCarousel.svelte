@@ -9,7 +9,7 @@
     import { onMount } from 'svelte';
     import { gotoIndex, todayDate, requestedWeek } from '../stores.js';
     export let foodData;
-    let mainGlide;
+    let ulGlide;
     const startAt = setStartDate();
     let glide;
     onMount(() => {
@@ -26,7 +26,7 @@
         window.onresize = () => {
             reactivity();
         };
-        disableBodyScroll(mainGlide);
+        disableBodyScroll(ulGlide);
     });
     gotoIndex.subscribe(val => {
         if (glide != null){
@@ -64,10 +64,10 @@
     }
 </script>
 
-<div class="glide mainGlide" bind:this={mainGlide}>
+<div class="glide mainGlide">
     <GlideBullets />
     <div data-glide-el="track" class="glide__track">
-        <ul class="glide__slides">
+        <ul class="glide__slides" bind:this={ulGlide}>
             {#each foodData as food, index}
                 <li class="glide__slide"><CenterCard data={food} index={index}/></li>
             {/each}
@@ -79,6 +79,7 @@
 <style>
     .mainGlide{
         width: 80%;
+        flex-grow: 1;
         -webkit-overflow-scrolling: touch;
         overscroll-behavior-y: contain;
     }
