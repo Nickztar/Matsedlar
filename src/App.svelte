@@ -32,7 +32,7 @@
 		flex-direction: column;
 		background: var(--primary);
 		width: 100vw;
-		min-height: 90vh;
+		height: 90%;
 		overflow: hidden;
 		position: relative;
 		touch-action: none;
