@@ -15,7 +15,7 @@
         {#if $hasSchool}
             <h1 title="{$selectedSchool.label}" class="schoolName">{$selectedSchool.label}</h1>
         {:else}
-            <h1>Matsedlar</h1>
+            <h1>MATTT</h1>
         {/if}
     </div>
     {#if $hasSchool}
@@ -44,7 +44,7 @@
         display: flex;
         text-align: center;
         justify-content: space-between;
-        height: 10vh;
+        height: 10%;
         width: 100%;
         background: var(--header);
     }
