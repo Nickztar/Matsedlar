@@ -72,6 +72,9 @@
 				navigator.serviceWorker.register('/sw.js');
 			});
 		}
+		document.body.addEventListener('touchmove', e => { 
+			e.preventDefault(); 
+		});
 	</script>
 </head>
 
