@@ -36,6 +36,7 @@
 		overflow: hidden;
 		position: absolute;
 		top: 10%;
+		transform: translate3d(0,0,0);
 		touch-action: none;
 		overscroll-behavior-y: none;
 	}
