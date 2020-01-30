@@ -50,7 +50,7 @@
 <style>
     .returnIcon{
         position: absolute;
-        top: 0;
+        top: 10%;
         left: 1%;
         width: 5vh;
         height: 5vh;
