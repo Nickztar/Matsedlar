@@ -79,6 +79,7 @@
 <style>
     .mainGlide{
         width: 80%;
+        position: absolute;
         flex-grow: 1;
         -webkit-overflow-scrolling: touch;
         overscroll-behavior-y: contain;

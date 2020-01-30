@@ -33,6 +33,7 @@
 		background: var(--primary);
 		width: 100vw;
 		height: 90%;
+		z-index: 20000;
 		overflow: hidden;
 		position: relative;
 	}
