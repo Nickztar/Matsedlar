@@ -34,7 +34,8 @@
 		width: 100vw;
 		height: 90%;
 		overflow: hidden;
-		position: relative;
+		position: absolute;
+		top: 10%;
 		touch-action: none;
 		overscroll-behavior-y: none;
 	}
