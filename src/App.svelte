@@ -34,7 +34,6 @@
 		width: 100vw;
 		height: 90%;
 		overflow: hidden;
-		margin-top: 10vh;
 		position: relative;
 	}
 	/* Disabled for now, fix colors */

@@ -39,8 +39,7 @@
         padding-left: 0.5rem;
     }
     header {
-        position: fixed;
-        top: 0;
+        position: relative;
         z-index: 1000;
         display: flex;
         text-align: center;
