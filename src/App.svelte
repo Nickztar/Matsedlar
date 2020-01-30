@@ -36,6 +36,7 @@
 		overflow: hidden;
 		position: relative;
 		touch-action: none;
+		overscroll-behavior: none;
 	}
 	/* Disabled for now, fix colors */
 	@media (prefers-color-scheme: light){

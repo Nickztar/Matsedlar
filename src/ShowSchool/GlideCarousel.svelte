@@ -77,6 +77,7 @@
     .mainGlide{
         width: 80%;
         -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: none;
     }
     .glide__slides{
         overflow: visible;
