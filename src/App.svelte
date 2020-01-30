@@ -35,6 +35,7 @@
 		height: 90%;
 		overflow: hidden;
 		position: relative;
+		touch-action: none;
 	}
 	/* Disabled for now, fix colors */
 	@media (prefers-color-scheme: light){

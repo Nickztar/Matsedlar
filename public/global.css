@@ -13,6 +13,7 @@ html, body {
 	max-height: 100%;
 	overflow: hidden;
 	background: rgb(51, 51, 57);
+	touch-action: none;
 }
 
 body {
