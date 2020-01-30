@@ -34,7 +34,9 @@
 		width: 100vw;
 		height: 90%;
 		overflow: hidden;
-		position: relative;
+		position: sticky;
+		position: -webkit-sticky;
+		top: 10%;
 	}
 	/* Disabled for now, fix colors */
 	@media (prefers-color-scheme: light){
