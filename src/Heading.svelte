@@ -15,7 +15,7 @@
         {#if $hasSchool}
             <h1 title="{$selectedSchool.label}" class="schoolName">{$selectedSchool.label}</h1>
         {:else}
-            <h1>Matsedl</h1>
+            <h1>Matsedler</h1>
         {/if}
     </div>
     {#if $hasSchool}
