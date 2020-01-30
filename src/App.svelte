@@ -38,10 +38,11 @@
 		flex-direction: column;
 		background: var(--primary);
 		width: 100vw;
-		height: 90%;
+		padding-top: 10vh;
+		height: 100%;
 		overflow: hidden;
 		position: fixed;
-		top: 10%;
+		top: 0;
 	}
 	/* Disabled for now, fix colors */
 	@media (prefers-color-scheme: light){
