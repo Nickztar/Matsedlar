@@ -2,10 +2,11 @@
     import MdRefresh from 'svelte-icons/md/MdRefresh.svelte'; 
     import { hasSchool, requestedWeek } from './stores.js';
     function handleRefresh(){
+        requestedWeek.set(0);
         hasSchool.set(false);
-        requestedWeek.set(0)
     }
 </script>
+
 <div class="contain">
     <h1>Åh nej!</h1>
     <h3>Något har gått snett, försök igen.</h3>

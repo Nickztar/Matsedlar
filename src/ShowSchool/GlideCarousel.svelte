@@ -2,12 +2,14 @@
     import '../../node_modules/@glidejs/glide/dist/css/glide.core.min.css';
     import '../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css';
     import Glide, { Controls, Keyboard, Swipe } from '@glidejs/glide/dist/glide.modular.esm';
+	import { disableBodyScroll } from 'body-scroll-lock/lib/bodyScrollLock.es6'
     import CenterCard from './Cards/CenterCard.svelte';
     import GlideArrow from './GlideArrows.svelte';
     import GlideBullets from './GlideBullets.svelte';
     import { onMount } from 'svelte';
     import { gotoIndex, todayDate, requestedWeek } from '../stores.js';
     export let foodData;
+    let mainGlide;
     const startAt = setStartDate();
     let glide;
     onMount(() => {
@@ -24,6 +26,7 @@
         window.onresize = () => {
             reactivity();
         };
+        disableBodyScroll(mainGlide);
     });
     gotoIndex.subscribe(val => {
         if (glide != null){
@@ -61,7 +64,7 @@
     }
 </script>
 
-<div class="glide mainGlide">
+<div class="glide mainGlide" bind:this={mainGlide}>
     <GlideBullets />
     <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">

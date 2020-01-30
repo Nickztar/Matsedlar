@@ -13,11 +13,7 @@ html, body {
 	max-height: 100%;
 	overflow: hidden;
 	background: rgb(51, 51, 57);
-	touch-action: none;
-	overscroll-behavior: contain;
-	-webkit-overflow-scrolling: auto;
-	-webkit-overscroll-behavior: contain;
-	}
+}
 
 body {
 	color: #333;
