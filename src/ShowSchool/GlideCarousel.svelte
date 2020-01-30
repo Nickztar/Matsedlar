@@ -76,8 +76,6 @@
 <style>
     .mainGlide{
         width: 80%;
-        position: absolute;
-        top: 0;
     }
     .glide__slides{
         overflow: visible;

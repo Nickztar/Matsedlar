@@ -32,7 +32,7 @@
 		flex-direction: column;
 		background: var(--primary);
 		width: 100vw;
-		height: 90%;
+		height: 90vh;
 		overflow: hidden;
 		position: absolute;
 		bottom: 0;
