@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static-' + Date.now();
-const dynamicCacheName = 'site-dynamic-' + Date.now();
+const staticCacheName = 'static-' + Date.now();
+const dynamicCacheName = 'dynamic-' + Date.now();
 const assets = [
   '/',
   '/index.html',
@@ -13,56 +13,50 @@ const assets = [
   'https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2',
 ];
 
-// cache size limit function
-const limitCacheSize = (name, size) => {
-  caches.open(name).then(cache => {
-    cache.keys().then(keys => {
-      if (keys.length > size) {
-        cache.delete(keys[0]).then(limitCacheSize(name, size));
-      }
-    });
+self.addEventListener('install', async e => {
+  const cache = await caches.open(staticCacheName);
+  await cache.addAll(assets);
+  return self.skipWaiting();
+});
+
+self.addEventListener('activate', async e => {
+  const cacheKeys = await caches.keys();
+  console.log(cacheKeys, "good")
+  const badCaches = cacheKeys.filter(key => {
+    return key != staticCacheName && key != dynamicCacheName;
   });
-};
-
-// install event
-self.addEventListener('install', evt => {
-  //console.log('service worker installed');
-  evt.waitUntil(
-    caches.open(staticCacheName).then((cache) => {
-    })
-  );
+  console.log(badCaches, "bad")
+  badCaches.forEach(async key => {
+    await caches.delete(key);
+  })
+  return self.skipWaiting();
 });
 
-// activate event
-self.addEventListener('activate', evt => {
-  //console.log('service worker activated');
-  evt.waitUntil(
-    caches.keys().then(keys => {
-      //console.log(keys);
-      return Promise.all(keys
-        .filter(key => key !== staticCacheName && key !== dynamicCacheName)
-        .map(key => caches.delete(key))
-      );
-    })
-  );
+self.addEventListener('fetch', async e => {
+  const req = e.request;
+  const url = new URL(req.url);
+
+  if (url.origin === location.origin) {
+    e.respondWith(cacheFirst(req));
+  } else {
+    e.respondWith(networkAndCache(req));
+  }
 });
 
-// fetch events
-self.addEventListener('fetch', evt => {
-  evt.respondWith(
-    caches.match(evt.request).then(cacheRes => {
-      return cacheRes || fetch(evt.request).then(fetchRes => {
-        return caches.open(dynamicCacheName).then(cache => {
-          cache.put(evt.request.url, fetchRes.clone());
-          // check cached items size
-          limitCacheSize(dynamicCacheName, 15);
-          return fetchRes;
-        })
-      });
-    }).catch(() => {
-      if (evt.request.url.indexOf('.html') > -1) {
-        return caches.match('/pages/fallback.html');
-      }
-    })
-  );
-});
+async function cacheFirst(req) {
+  const cache = await caches.open(staticCacheName);
+  const cached = await cache.match(req);
+  return cached || fetch(req);
+}
+
+async function networkAndCache(req) {
+  const cache = await caches.open(dynamicCacheName);
+  try {
+    const fresh = await fetch(req);
+    await cache.put(req, fresh.clone());
+    return fresh;
+  } catch (e) {
+    const cached = await cache.match(req);
+    return cached;
+  }
+}
