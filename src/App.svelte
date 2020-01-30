@@ -34,8 +34,8 @@
 		width: 100vw;
 		height: 90%;
 		overflow: hidden;
-		position: absolute;
-		top: 10%;
+		margin-top: 10vh;
+		position: relative;
 	}
 	/* Disabled for now, fix colors */
 	@media (prefers-color-scheme: light){
