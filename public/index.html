@@ -83,7 +83,7 @@
 			navigator.serviceWorker.register('/sw.js');
 		});
 	}
-	document.ontouchmove = function(e){ e.preventDefault(); }
+	document.body.touchmove = function(e){ e.preventDefault(); }
 </script>
 
 </html>
