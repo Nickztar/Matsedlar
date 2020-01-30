@@ -35,7 +35,7 @@
 		height: 90%;
 		overflow: hidden;
 		position: absolute;
-		bottom: 0;
+		top: 10%;
 	}
 	/* Disabled for now, fix colors */
 	@media (prefers-color-scheme: light){
