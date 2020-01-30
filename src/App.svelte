@@ -3,10 +3,13 @@
 	import SelectCard from './SelectSchool/SelectCard.svelte';
 	import Async from './ShowSchool/Async.svelte';
 	import { hasSchool } from './stores.js';
+	const preventTouch = e => {
+		e.preventDefault();
+	}
 </script>
 
 <Heading />
-<main>
+<main on:touchmove={preventTouch}>
 	{#if !$hasSchool}
 		<SelectCard />
 	{:else}
