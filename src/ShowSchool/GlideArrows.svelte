@@ -46,4 +46,9 @@
         transform: translateY(5px);
         cursor: pointer;
     }
+    @media screen and (min-width: 580px){
+        .glide__arrows{
+            width: 60%;
+        }
+    }
 </style>
