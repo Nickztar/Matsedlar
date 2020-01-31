@@ -2,7 +2,6 @@
     import '../../node_modules/@glidejs/glide/dist/css/glide.core.min.css';
     import '../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css';
     import Glide, { Controls, Keyboard, Swipe } from '@glidejs/glide/dist/glide.modular.esm';
-	import { disableBodyScroll } from 'body-scroll-lock/lib/bodyScrollLock.es6'
     import CenterCard from './Cards/CenterCard.svelte';
     import GlideArrow from './GlideArrows.svelte';
     import GlideBullets from './GlideBullets.svelte';
@@ -26,7 +25,6 @@
         window.onresize = () => {
             reactivity();
         };
-        disableBodyScroll(ulGlide);
     });
     gotoIndex.subscribe(val => {
         if (glide != null){

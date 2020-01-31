@@ -87,7 +87,7 @@
         display: block;
         margin: 1.5vh auto;
         max-height: 17vh;
-        padding: 1rem;
+        padding: 0.7rem;
         font-size: 1rem;
         text-align: center;
         border-radius: 0.3rem;
