@@ -1,5 +1,4 @@
 <script>
-    import { fade } from 'svelte/transition';
     import { gotoIndex } from '../../stores.js';
     export let data;
     export let index;
