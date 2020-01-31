@@ -86,6 +86,9 @@ button:focus {
 .glide__bullet--active{
 	background-color: var(--priority) !important;
 }
+.listContainer{
+	touch-action: pan-y;
+}
 
 @media (prefers-color-scheme: light){
 	html, body{
