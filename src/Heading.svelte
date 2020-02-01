@@ -1,9 +1,9 @@
 <script>
     import GiKnifeFork from 'svelte-icons/gi/GiKnifeFork.svelte'
-    import { hasSchool, selectedSchool, requestedWeek } from './stores.js';
+    import { hasSchool, selectedSchool, requestedWeek, homeWeek } from './stores.js';
     function selectSchool(){
         hasSchool.set(false);
-        requestedWeek.set(0);
+        requestedWeek.set($homeWeek);
     }
 </script>
 

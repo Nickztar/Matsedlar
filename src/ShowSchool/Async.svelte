@@ -3,7 +3,7 @@
     import EmptyWeek from './EmptyWeek.svelte';
     import Loading from '../Loading.svelte';
     import Error from '../Error.svelte';
-    import { selectedSchool, requestedWeek } from '../stores.js';
+    import { selectedSchool, requestedWeek, homeWeek } from '../stores.js';
     import TiHome from 'svelte-icons/ti/TiHome.svelte';
     let displayReturn = false;
     let foodData = getData();
@@ -17,7 +17,7 @@
         }
     }
     requestedWeek.subscribe((val)=>{
-        if (val != 0){
+        if (val != $homeWeek){
             displayReturn = true;
         }
         else{
@@ -26,7 +26,7 @@
         foodData = getData();
     });
     function returnHome(){
-        requestedWeek.set(0);
+        requestedWeek.set($homeWeek);
     }
 </script>
 

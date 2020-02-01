@@ -43,23 +43,16 @@
         }
     }
     function setStartDate(){
-        const trimDate = $todayDate.substring(0,6);
+        const trimDate = $todayDate.substring(0,2).trim();
         let startPoint = 0;
         foodData.forEach((el, index) => {
-            if(el.date == trimDate){
-                skipWeekEnd(el.day);
+            if(el.date.substring(0,2).trim() == trimDate){
                 startPoint = index;
             }
         });
         return startPoint;
     }
-    function skipWeekEnd(day){
-        if (day == 'LÖR' || day == 'SÖN'){
-            if ($requestedWeek == 0){
-                requestedWeek.set(1);
-            }
-        }
-    }
+    
 </script>
 
 <div class="glide mainGlide">

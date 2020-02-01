@@ -1,14 +1,8 @@
 <script>
     import MdKeyboardReturn from 'svelte-icons/md/MdKeyboardReturn.svelte';
-    import { requestedWeek } from '../stores.js';
+    import { requestedWeek, homeWeek } from '../stores.js';
     function returnHome(){
-        if ($requestedWeek == 1)
-        {
-            requestedWeek.set(-1);
-        }
-        else{
-            requestedWeek.set(0);
-        }
+        requestedWeek.set($homeWeek);
     }
 </script>
 
