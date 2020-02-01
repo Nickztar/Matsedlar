@@ -39,10 +39,9 @@
             <p>{date}</p>
         </div>
         <div class="food">
-            <div class="foods">{food[0]}</div>
-            {#if food.length > 1}
-                <div class="foods">{food[1]}</div>
-            {/if}
+            {#each food as dish}
+                <div class="foods">{dish}</div>
+            {/each}
         </div>
     </div>
 </div>
