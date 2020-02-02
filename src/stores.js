@@ -47,7 +47,7 @@ function getCookie(cname) {
 export function skipWeekend(){
   let date = new Date();
   let day = date.getDay();
-  if (day > 5){
+  if (day > 5 || day < 1){
       return 1;
   }else{
     return 0;
