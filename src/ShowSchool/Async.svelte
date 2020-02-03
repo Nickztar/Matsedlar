@@ -8,7 +8,7 @@
     let displayReturn = false;
     let foodData = getData();
     async function getData(){
-        const response = await fetch(`https://matsedlarna.herokuapp.com/${$selectedSchool.value}/${$requestedWeek}`);
+        const response = await fetch(`/api/getDay?id=${$selectedSchool.value}&week=${$requestedWeek}`);
         const json = await response.json();
         if (response.ok){
             return json;
