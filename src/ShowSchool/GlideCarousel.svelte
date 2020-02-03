@@ -8,7 +8,6 @@
     import { onMount } from 'svelte';
     import { gotoIndex, todayDate, requestedWeek } from '../stores.js';
     export let foodData;
-    let ulGlide;
     const startAt = setStartDate();
     let glide;
     onMount(() => {
@@ -58,7 +57,7 @@
 <div class="glide mainGlide">
     <GlideBullets />
     <div data-glide-el="track" class="glide__track">
-        <ul class="glide__slides" bind:this={ulGlide}>
+        <ul class="glide__slides">
             {#each foodData as food, index}
                 <li class="glide__slide"><CenterCard data={food} index={index}/></li>
             {/each}
