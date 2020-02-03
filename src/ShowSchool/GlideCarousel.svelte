@@ -41,6 +41,7 @@
         else {
             glide.update({peek: 100});
         }
+        document.body.height = window.innerHeight;
     }
     function setStartDate(){
         const trimDate = $todayDate.substring(0,2).trim();
