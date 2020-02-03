@@ -32,7 +32,9 @@
 		flex-direction: column;
 		background: var(--primary);
 		width: 100vw;
-		height: 90%;
+		min-height: 90vh;
+		min-height: -moz-available;
+		min-height: -webkit-fill-available;
 		z-index: 20000;
 		overflow: hidden;
 	}
