@@ -5,13 +5,14 @@ const urls = ['https://webmenu.foodit.se/?r=13&m=1380&p=789&c=10120&w=0&v=Week&l
 // /0/0 = kattegatt current week
 // /0/1 = kattegatt next week
 // /1/0 = sannarp current
-module.exports = (req, res) => {
-    const { id, week } = req.query;
+module.exports = async (req, res) => {
+    const id = req.query.id;
+    const week = req.query.week;
     if (id > urls.length-1) return res.status(404).send("School not found") ;
     const preUrl = urls[id];
     const url = preUrl.replace('w=0', `w=${week}`);
     await getData(url).then(response => {
-        res.status(200).send(response);
+        res.status(200).json(response);
     }).catch(err => {
         res.status(500).send(err);
     })
