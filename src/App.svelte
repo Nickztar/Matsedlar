@@ -33,6 +33,8 @@
 		background: var(--primary);
 		width: 100vw;
 		height: 90%;
+		height: -moz-available;
+		height: -webkit-fill-available;
 		z-index: 20000;
 		overflow: hidden;
 	}
