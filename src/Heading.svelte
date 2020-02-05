@@ -14,7 +14,7 @@
             <GiKnifeFork />
         </div>
         {#if $hasSchool}
-            <h2 title="{$selectedSchool.label}" class="schoolName">{$selectedSchool.label}</h2>
+            <h2 class="schoolName">{$selectedSchool.label}</h2>
         {:else}
             <h2>Matsedlar</h2>
         {/if}
