@@ -36,7 +36,6 @@
 		z-index: 20000;
 		overflow: hidden;
 	}
-	/* Disabled for now, fix colors */
 	@media (prefers-color-scheme: light){
 		:global(:root) {
 			--light: rgb(14, 14, 14);
