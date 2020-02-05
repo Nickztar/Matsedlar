@@ -92,6 +92,8 @@
         width: auto;
         white-space: nowrap;
         height: 8vh;
+        display: flex;
+        align-items: center;
     }
     @media (prefers-color-scheme: light){
         h3, .change, .icon{
