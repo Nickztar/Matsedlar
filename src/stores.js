@@ -10,7 +10,6 @@ export const selectedSchool = new writable(getCookie('school'));
 export const homeWeek = new readable(skipWeekend());
 export const requestedWeek = new writable(skipWeekend());
 
-
 function getDate() {
   let today = new Date().toLocaleDateString('en-GB', {
     day: 'numeric',

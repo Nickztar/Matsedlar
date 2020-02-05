@@ -20,7 +20,7 @@
         {/if}
     </div>
     {#if $hasSchool}
-        <button on:click={selectSchool}><div class="change"><FaSyncAlt/></div></button>
+        <button on:click={selectSchool}><h3>Byt skola</h3><div class="change"><FaSyncAlt/></div></button>
     {/if}
 </header>
 
@@ -39,6 +39,7 @@
         align-self: center;
         height: 6vh;
         width: 6vh;
+        display: none;
     }
     .info{
         width: calc(100% - 8vh);
@@ -84,14 +85,25 @@
     button:hover{
         opacity: 0.9;
     }
-    /* h3 {
+    h3 {
         color: var(--priority);
         text-align: center;
-        margin: 0;
-    } */
+        padding: 2vh;
+        width: auto;
+        white-space: nowrap;
+        height: 8vh;
+    }
     @media (prefers-color-scheme: light){
-        .change, .icon{
+        h3, .change, .icon{
             color: #fff;
+        }
+    }
+    @media screen and (max-width: 500px){
+        .change{
+            display: block;
+        }
+        h3{
+            display: none;
         }
     }
 </style>
