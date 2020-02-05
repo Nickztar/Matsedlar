@@ -92,5 +92,6 @@
         background: var(--priority);
         color: var(--text);
         word-wrap: break-word;
+        overflow: auto;
     }
 </style>
