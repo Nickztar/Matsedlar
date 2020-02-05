@@ -37,12 +37,12 @@
     .change{
         color: var(--priority);
         align-self: center;
-        height: 6vh;
-        width: 6vh;
+        height: 5vh;
+        width: 5vh;
         display: none;
     }
     .info{
-        width: calc(100% - 8vh);
+        width: calc(100% - 7vh);
         display: flex;
         padding-left: 0.5rem;
     }
