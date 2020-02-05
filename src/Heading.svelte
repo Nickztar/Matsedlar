@@ -1,5 +1,6 @@
 <script>
-    import GiKnifeFork from 'svelte-icons/gi/GiKnifeFork.svelte'
+    import GiKnifeFork from 'svelte-icons/gi/GiKnifeFork.svelte';
+    import FaSyncAlt from 'svelte-icons/fa/FaSyncAlt.svelte';
     import { hasSchool, selectedSchool, requestedWeek, homeWeek } from './stores.js';
     function selectSchool(){
         hasSchool.set(false);
@@ -13,13 +14,13 @@
             <GiKnifeFork />
         </div>
         {#if $hasSchool}
-            <h1 title="{$selectedSchool.label}" class="schoolName">{$selectedSchool.label}</h1>
+            <h2 title="{$selectedSchool.label}" class="schoolName">{$selectedSchool.label}</h2>
         {:else}
-            <h1>Matsedlar</h1>
+            <h2>Matsedlar</h2>
         {/if}
     </div>
     {#if $hasSchool}
-        <button on:click={selectSchool}><h3>Byt skola</h3></button>
+        <button on:click={selectSchool}><div class="change"><FaSyncAlt/></div></button>
     {/if}
 </header>
 
@@ -33,8 +34,14 @@
         width: 6vh;
         color: var(--priority);
     }
+    .change{
+        color: var(--priority);
+        align-self: center;
+        height: 6vh;
+        width: 6vh;
+    }
     .info{
-        width: 50%;
+        width: calc(100% - 8vh);
         display: flex;
         padding-left: 0.5rem;
     }
@@ -48,12 +55,11 @@
         width: 100%;
         background: var(--header);
     }
-    h1 {
+    h2 {
         user-select: none;
         text-align: left;
         align-self: center;
         color: var(--light);
-        
     }
     .schoolName{
         white-space: nowrap;
@@ -65,10 +71,10 @@
         border: none;
         background: none;
         border-radius: 10px;
-        height: 60%;
         margin: 0;
+        padding: 0;
+        margin-right: 2vh;
         width: auto;
-        margin-right: 2vw;
         align-self: center;
         cursor: pointer;
     }
@@ -78,13 +84,13 @@
     button:hover{
         opacity: 0.9;
     }
-    h3 {
+    /* h3 {
         color: var(--priority);
         text-align: center;
         margin: 0;
-    }
+    } */
     @media (prefers-color-scheme: light){
-        h3, .icon{
+        .change, .icon{
             color: #fff;
         }
     }
