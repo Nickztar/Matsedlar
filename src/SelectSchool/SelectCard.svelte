@@ -75,7 +75,9 @@
         --border: none;
         width: 65%;
         --height: 10vh;
-        --inputFontSize: 1.2rem
+        --inputFontSize: 1.2rem;
+        --spinnerLeft: 30%;
+        --spinnerColor: var(--priority);
     }
     .conButton{
         display: flex;
