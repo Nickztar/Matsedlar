@@ -31,7 +31,7 @@
     <h1>Hitta din skola</h1>
     <div class="conFind">
         <div class="conMenu">
-            <Select {loadOptions} noOptionsMessage='Sök efter skola' bind:selectedValue placeholder={'Välj skola...'}/>
+            <Select {loadOptions} noOptionsMessage='Sök efter skola' listPlacement='bottom' bind:selectedValue placeholder={'Välj skola...'}/>
         </div>
         <button id="submit" class="findLoc" on:click={setSchool}><div class="icon"><FaArrowRight /></div></button>
     </div>
