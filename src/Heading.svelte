@@ -16,7 +16,7 @@
         {#if $hasSchool}
             <h2 class="schoolName">{$selectedSchool.label}</h2>
         {:else}
-            <h2>Matsedlar</h2>
+            <h1>Matsedlar</h1>
         {/if}
     </div>
     {#if $hasSchool}
@@ -56,7 +56,7 @@
         width: 100%;
         background: var(--header);
     }
-    h2 {
+    h2, h1 {
         user-select: none;
         text-align: left;
         align-self: center;
