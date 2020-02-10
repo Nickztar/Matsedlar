@@ -23,6 +23,7 @@
         align-items: center;
         border: none;
         outline: none;
+        z-index: 100;
     }
     h4, a{
         text-decoration: none;
