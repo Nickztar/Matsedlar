@@ -6,6 +6,7 @@
     import IoIosSunny from 'svelte-icons/io/IoIosSunny.svelte';
     import MdViewCarousel from 'svelte-icons/md/MdViewCarousel.svelte';
     import MdFormatAlignJustify from 'svelte-icons/md/MdFormatAlignJustify.svelte';
+    document.addEventListener('click', handleBodyClick)
     let preferDesktop = false;
     updateColor($prefersLight);
     function handleShow(e){
@@ -17,6 +18,15 @@
         prefersLight.set(!$prefersLight);
         setCookie('color', $prefersLight, 360);
         updateColor($prefersLight);
+    }
+    function handleBodyClick(){
+		if($menuOpen){
+			menuOpen.set(false);
+		}
+	}
+    function handleDisplay(e){
+        e.stopPropagation();
+        /* preferDesktop = !preferDesktop; */
     }
     function updateColor(val){
         const root = document.documentElement;
@@ -40,10 +50,6 @@
             root.style.setProperty('--header', 'rgb(14, 14, 14)');
             root.style.setProperty('--headerText', 'rgb(255, 187, 51)');
         }
-    }
-    function handleDisplay(e){
-        e.stopPropagation();
-        /* preferDesktop = !preferDesktop; */
     }
     function setCookie(cname, cvalue, exdays) {
         let d = new Date();
