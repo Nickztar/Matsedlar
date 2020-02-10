@@ -41,7 +41,7 @@
         }
     }
     function handleDisplay(){
-        preferDesktop = !preferDesktop;
+        /* preferDesktop = !preferDesktop; */
     }
     function setCookie(cname, cvalue, exdays) {
         let d = new Date();
