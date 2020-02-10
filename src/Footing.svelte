@@ -1,10 +1,6 @@
-<script>
-    // your script goes here
-</script>
-
-<footer>
+<div>
     <h4>Made by <a href="https://github.com/Nickztar">Nicholas Broström</a></h4>
-</footer>
+</div>
 
 <style>
     *{
@@ -12,7 +8,7 @@
         padding: 0;
         box-sizing: border-box;
     }
-    footer{
+    div{
         position: absolute;
         bottom: 0;
         width: 100vw;
