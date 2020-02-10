@@ -13,6 +13,8 @@
         box-sizing: border-box;
     }
     footer{
+        position: absolute;
+        bottom: 0;
         width: 100vw;
         height: 5%;
         background: var(--primary);
