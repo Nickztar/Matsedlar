@@ -91,6 +91,7 @@
         color: var(--secondary)
     }
     .icon{
+        cursor: pointer;
         height: 6vh;
         width: 6vh;
     }
@@ -115,6 +116,10 @@
     .handleMenu .icon{
         animation: spin 450ms;
     }
+    .displayMode .icon{
+        cursor: default;
+        color: var(--light);
+    }
     .shown{
         background: var(--lightBorder); 
         box-shadow: 0 0 3px var(--strong-shadow);
@@ -137,9 +142,6 @@
     }
     .colorMode{
         padding-right: 0.2rem;
-    }
-    .displayMode{
-        color: var(--light);
     }
     @keyframes spin{
         0%  {transform: rotate(0deg)}
