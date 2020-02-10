@@ -73,7 +73,7 @@
             </div>
         </div>
     {:else}
-        <div class="handleMenu hidden" in:fly={{x: -150, duration: 400 }} out:fade={{duration: 0}}>
+        <div class="handleMenu hidden" in:fly={{x: -50, duration: 400 }} out:fade={{duration: 0}}>
             <div class="icon" on:click={handleShow}><IoIosCog/></div>
         </div>
     {/if}
@@ -110,7 +110,6 @@
         background: var(--lightBorder); 
         box-shadow: 0 0 3px var(--strong-shadow);
         border-radius: 0.2rem;
-        transition: background 200ms;
         color: var(--priority);
     }
     .handleMenu .icon{
@@ -118,7 +117,6 @@
     }
     .hidden{
         color: var(--lightBorder);
-        transition: all 200ms;
         background: none;
         box-shadow: none;
     }
