@@ -53,10 +53,10 @@
 
 <div class="sideMenu">
     {#if showMenu}
-        <div class="handleMenu" in:fly={{x: 200, duration: 400 }} out:fly={{x: 200, duration: 0 }}>
+        <div class="handleMenu shown" in:fly={{x: 200, duration: 400 }}>
             <div class="icon" on:click={handleShow}><IoIosCog/></div>
         </div>
-        <div class="menuContent" in:fly={{x: 200, duration: 400 }} out:fly={{x: 200, duration: 200 }}>
+        <div class="menuContent" in:fly={{x: 200, duration: 400 }}>
             <div class="colorMode">
                 {#if !$prefersLight}
                     <div class="icon dark" on:click={handleColor}><IoIosSunny/></div>
@@ -73,7 +73,7 @@
             </div>
         </div>
     {:else}
-        <div class="handleMenu hidden" in:fly={{x: -50, duration: 400 }} out:fade={{duration: 0}}>
+        <div class="handleMenu hidden" in:fly={{x: -50, duration: 400, delay: 50 }} out:fade={{duration: 0}}>
             <div class="icon" on:click={handleShow}><IoIosCog/></div>
         </div>
     {/if}
@@ -107,13 +107,17 @@
         height: 7vh;
         padding: 0 0.2rem;
         margin-right: 0.2rem;
-        background: var(--lightBorder); 
-        box-shadow: 0 0 3px var(--strong-shadow);
         border-radius: 0.2rem;
+        background: none;
+        box-shadow: none;
         color: var(--priority);
     }
     .handleMenu .icon{
         animation: spin 450ms;
+    }
+    .shown{
+        background: var(--lightBorder); 
+        box-shadow: 0 0 3px var(--strong-shadow);
     }
     .hidden{
         color: var(--lightBorder);
