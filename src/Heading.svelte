@@ -32,10 +32,10 @@
         align-self: center;
         height: 6vh;
         width: 6vh;
-        color: var(--priority);
+        color: var(--headerText);
     }
     .change{
-        color: var(--priority);
+        color: var(--headerText);
         align-self: center;
         height: 5vh;
         width: 5vh;
@@ -86,7 +86,7 @@
         opacity: 0.9;
     }
     h3 {
-        color: var(--priority);
+        color: var(--headerText);
         text-align: center;
         padding: 2vh;
         width: auto;
@@ -94,11 +94,6 @@
         height: 8vh;
         display: flex;
         align-items: center;
-    }
-    @media (prefers-color-scheme: light){
-        h3, .change, .icon{
-            color: #fff;
-        }
     }
     @media screen and (max-width: 500px){
         .change{

@@ -9,6 +9,7 @@ export const todayDate = new readable(getDate());
 export const selectedSchool = new writable(getCookie('school'));
 export const homeWeek = new readable(skipWeekend());
 export const requestedWeek = new writable(skipWeekend());
+export const prefersLight = new writable(getCurrentColor());
 
 function getDate() {
   let today = new Date().toLocaleDateString('en-GB', {
@@ -50,5 +51,18 @@ export function skipWeekend(){
       return 1;
   }else{
     return 0;
+  }
+}
+function getCurrentColor(){
+  let colorCookie = getCookie("color");
+  if (colorCookie){
+    return colorCookie;
+  }
+  else if(!window.matchMedia) {
+    return false;
+  } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    return false;
+  } else{
+    return true;
   }
 }
