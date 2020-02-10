@@ -1,18 +1,19 @@
 <script>
     import { fly, fade } from 'svelte/transition';
-    import { prefersLight } from './stores.js';
+    import { prefersLight, menuOpen } from './stores.js';
     import IoIosCog from 'svelte-icons/io/IoIosCog.svelte';
     import IoMdMoon from 'svelte-icons/io/IoMdMoon.svelte';
     import IoIosSunny from 'svelte-icons/io/IoIosSunny.svelte';
     import MdViewCarousel from 'svelte-icons/md/MdViewCarousel.svelte';
     import MdFormatAlignJustify from 'svelte-icons/md/MdFormatAlignJustify.svelte';
     let preferDesktop = false;
-    let showMenu = false;
     updateColor($prefersLight);
-    function handleShow(){
-        showMenu = !showMenu;
+    function handleShow(e){
+        e.stopPropagation();
+        menuOpen.set(!$menuOpen);
     }
-    function handleColor(){
+    function handleColor(e){
+        e.stopPropagation();
         prefersLight.set(!$prefersLight);
         setCookie('color', $prefersLight, 360);
         updateColor($prefersLight);
@@ -40,7 +41,8 @@
             root.style.setProperty('--headerText', 'rgb(255, 187, 51)');
         }
     }
-    function handleDisplay(){
+    function handleDisplay(e){
+        e.stopPropagation();
         /* preferDesktop = !preferDesktop; */
     }
     function setCookie(cname, cvalue, exdays) {
@@ -52,7 +54,7 @@
 </script>
 
 <div class="sideMenu">
-    {#if showMenu}
+    {#if $menuOpen}
         <div class="handleMenu shown" in:fly={{x: 200, duration: 400 }}>
             <div class="icon" on:click={handleShow}><IoIosCog/></div>
         </div>

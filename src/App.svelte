@@ -3,7 +3,13 @@
 	import Settings from './Settings.svelte';
 	import SelectCard from './SelectSchool/SelectCard.svelte';
 	import Async from './ShowSchool/Async.svelte';
-	import { hasSchool } from './stores.js';
+	import { hasSchool, menuOpen } from './stores.js';
+	document.addEventListener('click', handleBodyClick)
+	function handleBodyClick(){
+		if($menuOpen){
+			menuOpen.set(false);
+		}
+	}
 </script>
 
 <Heading />

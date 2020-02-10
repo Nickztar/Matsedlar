@@ -10,6 +10,7 @@ export const selectedSchool = new writable(getCookie('school'));
 export const homeWeek = new readable(skipWeekend());
 export const requestedWeek = new writable(skipWeekend());
 export const prefersLight = new writable(getCurrentColor());
+export const menuOpen = new writable(false);
 
 function getDate() {
   let today = new Date().toLocaleDateString('en-GB', {
