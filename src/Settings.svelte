@@ -81,7 +81,7 @@
             </div>
         </div>
     {:else}
-        <div class="handleMenu hidden" in:fly={{x: -50, duration: 400, delay: 50 }} out:fade={{duration: 0}}>
+        <div class="handleMenu hidden" in:fly={{x: -100, duration: 400 }} out:fade={{duration: 0}}>
             <div class="icon" on:click={handleShow}><IoIosCog/></div>
         </div>
     {/if}
