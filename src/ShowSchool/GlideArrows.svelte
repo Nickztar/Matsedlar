@@ -27,6 +27,8 @@
         margin: 6vh auto 0;
         align-items: center;
         justify-content: space-around;
+        background: var(--primary);
+        z-index: 2000;
     }
     .glide__arrow{
         color: var(--lightArrow);
