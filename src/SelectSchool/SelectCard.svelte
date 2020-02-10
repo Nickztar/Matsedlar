@@ -3,16 +3,11 @@
     import FaArrowRight from 'svelte-icons/fa/FaArrowRight.svelte'
     import Select from 'svelte-select';
     import { hasSchool, selectedSchool } from '../stores.js';
-    const items = [
-        { value: 0, label: "Kattegattgymnasiet" },
-        { value: 1, label: "Sannarpsgymnasiet" },
-        { value: 0, label: "Jutarumsskolan"},
-        { value: 0, label: "Bäckagårds FSK"},
-        { value: 0, label: "Bäckagårdsskolan"},
-        { value: 0, label: "Centrumsskolan"},
-        { value: 0, label: "Lummeskolan"},
-        { value: 1, label: "Kristinehedsgymnasiet" }
-    ];
+    const loadOptions = async (filterText) => {
+        const response = await fetch(`https://matsedlarna.herokuapp.com/schools?school=${filterText}`);
+        const json = await response.json();
+        return json;
+    };
     let selectedValue = null;
     function locateSchool(){
 
@@ -36,7 +31,7 @@
     <h1>Hitta din skola</h1>
     <div class="conFind">
         <div class="conMenu">
-            <Select {items} bind:selectedValue placeholder={'Välj skola...'}/>
+            <Select {loadOptions} noOptionsMessage='Sök efter skola' listPlacement='bottom' bind:selectedValue placeholder={'Välj skola...'}/>
         </div>
         <button id="submit" class="findLoc" on:click={setSchool}><div class="icon"><FaArrowRight /></div></button>
     </div>
@@ -80,7 +75,9 @@
         --border: none;
         width: 65%;
         --height: 10vh;
-        --inputFontSize: 1.2rem
+        --inputFontSize: 1.2rem;
+        --spinnerLeft: 30%;
+        --spinnerColor: var(--priority);
     }
     .conButton{
         display: flex;

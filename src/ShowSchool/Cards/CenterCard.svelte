@@ -93,4 +93,9 @@
         color: var(--text);
         word-wrap: break-word;
     }
+    @media screen and (max-height: 600px){
+        .foods{
+            overflow: auto;
+        }
+    }
 </style>

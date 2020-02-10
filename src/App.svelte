@@ -1,5 +1,6 @@
 <script>
 	import Heading from './Heading.svelte';
+	import Settings from './Settings.svelte';
 	import SelectCard from './SelectSchool/SelectCard.svelte';
 	import Async from './ShowSchool/Async.svelte';
 	import { hasSchool } from './stores.js';
@@ -7,6 +8,7 @@
 
 <Heading />
 <main>
+	<Settings/>
 	{#if !$hasSchool}
 		<SelectCard />
 	{:else}
@@ -25,6 +27,7 @@
 		--primary: rgb(51, 51, 57);
 		--text: #000;
 		--header: rgb(14, 14, 14); 
+		--headerText: rgb(255, 187, 51);
 	}
 	main{
 		align-items: center;
@@ -36,7 +39,6 @@
 		z-index: 20000;
 		overflow: hidden;
 	}
-	/* Disabled for now, fix colors */
 	@media (prefers-color-scheme: light){
 		:global(:root) {
 			--light: rgb(14, 14, 14);
@@ -46,6 +48,7 @@
 			--lightBorder:rgb(155, 153, 153, 0.7);   
 			--lightArrow:rgb(109, 109, 109);
 			--header: #FF4C4Cd0; 
+			--headerText: #eee;
 		}
 	} 
 </style>
