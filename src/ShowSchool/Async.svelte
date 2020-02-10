@@ -1,9 +1,10 @@
 <script>
     import GlideCarousel from './GlideCarousel.svelte';
+    import DesktopView from './Desktop/DesktopView.svelte';
     import EmptyWeek from './EmptyWeek.svelte';
     import Loading from '../Loading.svelte';
     import Error from '../Error.svelte';
-    import { selectedSchool, requestedWeek, homeWeek } from '../stores.js';
+    import { selectedSchool, requestedWeek, homeWeek, prefersDesktop } from '../stores.js';
     import TiHome from 'svelte-icons/ti/TiHome.svelte';
     let displayReturn = false;
     let foodData = getData();
@@ -39,7 +40,11 @@
                 <TiHome/>
             </div>
         {/if}
-        <GlideCarousel foodData={data}/>
+        {#if $prefersDesktop}
+            <DesktopView foodData={data}/>
+        {:else}
+            <GlideCarousel foodData={data}/>
+        {/if}
     {:else}
         <EmptyWeek/>
     {/if}
