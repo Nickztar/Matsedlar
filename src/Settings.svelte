@@ -53,7 +53,7 @@
 
 <div class="sideMenu">
     {#if showMenu}
-        <div class="handleMenu" in:fly={{x: 200, duration: 400 }} out:fly={{x: 200, duration: 200 }}>
+        <div class="handleMenu" in:fly={{x: 200, duration: 400 }} out:fly={{x: 200, duration: 0 }}>
             <div class="icon" on:click={handleShow}><IoIosCog/></div>
         </div>
         <div class="menuContent" in:fly={{x: 200, duration: 400 }} out:fly={{x: 200, duration: 200 }}>
