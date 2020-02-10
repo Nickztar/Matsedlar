@@ -1,5 +1,6 @@
 <script>
 	import Heading from './Heading.svelte';
+	import Footing from './Footing.svelte';
 	import Settings from './Settings.svelte';
 	import SelectCard from './SelectSchool/SelectCard.svelte';
 	import Async from './ShowSchool/Async.svelte';
@@ -15,6 +16,7 @@
 		<Async />
 	{/if}
 </main>
+<Footing />
 		
 <style>
 	:global(:root) {
@@ -35,7 +37,7 @@
 		flex-direction: column;
 		background: var(--primary);
 		width: 100vw;
-		height: 90%;
+		height: 85%;
 		z-index: 20000;
 		overflow: hidden;
 	}
