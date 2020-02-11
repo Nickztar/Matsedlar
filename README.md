@@ -30,7 +30,7 @@ npm run dev
 
 https://www.matsedlar.se
 
-Nu tillgänglig som PWA!!!
+Nu tillgänglig som PWA och support för dark mode och light mode samt en egen vy för desktop?!!!
 
 Tanken är att man ska välja skola genom att söka eller klicka genom options eller använda sin geolocation för att välja närmaste skola.
 
