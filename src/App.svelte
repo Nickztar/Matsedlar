@@ -28,6 +28,7 @@
 		--text: #000;
 		--header: rgb(14, 14, 14); 
 		--headerText: rgb(255, 187, 51);
+		--settings: rgb(27,27,27);
 	}
 	main{
 		align-items: center;
@@ -49,6 +50,7 @@
 			--lightArrow:rgb(109, 109, 109);
 			--header: #FF4C4Cd0; 
 			--headerText: #eee;
+			--settings: rgb(155, 153, 153, 0.7);
 		}
 	} 
 </style>

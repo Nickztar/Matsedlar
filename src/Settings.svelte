@@ -26,6 +26,7 @@
     function handleDisplay(e){
         e.stopPropagation();
         prefersDesktop.set(!$prefersDesktop);
+        setCookie('desktop', $prefersDesktop, 360);
     }
     function updateColor(val){
         const root = document.documentElement;
@@ -38,6 +39,8 @@
             root.style.setProperty('--lightArrow', 'rgb(109, 109, 109)');
             root.style.setProperty('--header', '#FF4C4Cd0');
             root.style.setProperty('--headerText', '#eee');
+            root.style.setProperty('--settings', 'rgb(155, 153, 153, 0.7)');
+
         }
         else{
             root.style.setProperty('--light', '#eee');
@@ -48,6 +51,7 @@
             root.style.setProperty('--lightArrow', 'rgba(255, 255, 255)');
             root.style.setProperty('--header', 'rgb(14, 14, 14)');
             root.style.setProperty('--headerText', 'rgb(255, 187, 51)');
+            root.style.setProperty('--settings', 'rgb(27,27,27)');
         }
     }
     function setCookie(cname, cvalue, exdays) {
@@ -124,11 +128,10 @@
         animation: spin 450ms;
     }
     .displayMode .icon{
-        cursor: default;
         color: var(--light);
     }
     .shown{
-        background: var(--lightBorder); 
+        background: var(--settings); 
         box-shadow: 0 0 3px var(--strong-shadow);
     }
     .hidden{
@@ -143,7 +146,7 @@
         padding: 0 0.2rem;
         height: 7vh;
         margin-right: 0.2rem;
-        background: var(--lightBorder); 
+        background: var(--settings); 
         box-shadow: 0 0 3px var(--strong-shadow);
         border-radius: 0.2rem;
     }

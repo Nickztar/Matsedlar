@@ -1,11 +1,29 @@
 <script>
+    import { onMount } from 'svelte';
+    import { todayDate } from '../../stores.js';
     export let data;
     const day = data.day;
     const date = data.date;
     const food = data.foods;
+    let isToday = getToday();
+    function getToday(){
+        const storeDate = $todayDate.substring(0,2).trim();
+        const deskDate = date.substring(0,2).trim();
+        if (storeDate == deskDate){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    onMount(() => {
+        if (isToday){
+            const el = document.getElementById('currentDay');
+            el.scrollIntoView(true);
+        }
+    })
 </script>
 
-<div class="card">
+<div class="card" id="{isToday ? 'currentDay' : ''}">
     <div class="container">
         <div class="info">
             <div class="day">
@@ -17,7 +35,7 @@
         </div>
         <div class="food">
             {#each food as dish}
-                <div class="foods">{dish}</div>
+                <div class="{isToday ? 'foods today' : 'foods'}">{dish}</div>
             {/each}
         </div>
     </div>
@@ -31,6 +49,9 @@
         font-family: 'Roboto', sans-serif;
     }
     h2 {
+        color: var(--priority);
+    }
+    div .today{
         color: var(--priority);
     }
     .card{

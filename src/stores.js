@@ -10,7 +10,7 @@ export const selectedSchool = new writable(getCookie('school'));
 export const homeWeek = new readable(skipWeekend());
 export const requestedWeek = new writable(skipWeekend());
 export const prefersLight = new writable(getCurrentColor());
-export const prefersDesktop = new writable(false);
+export const prefersDesktop = new writable(getCookie('desktop'));
 export const menuOpen = new writable(false);
 
 function getDate() {
