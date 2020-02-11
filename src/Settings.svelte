@@ -1,13 +1,12 @@
 <script>
     import { fly, fade } from 'svelte/transition';
-    import { prefersLight, menuOpen } from './stores.js';
+    import { prefersLight, prefersDesktop, menuOpen } from './stores.js';
     import IoIosCog from 'svelte-icons/io/IoIosCog.svelte';
     import IoMdMoon from 'svelte-icons/io/IoMdMoon.svelte';
     import IoIosSunny from 'svelte-icons/io/IoIosSunny.svelte';
     import MdViewCarousel from 'svelte-icons/md/MdViewCarousel.svelte';
     import MdFormatAlignJustify from 'svelte-icons/md/MdFormatAlignJustify.svelte';
     document.addEventListener('click', handleBodyClick)
-    let preferDesktop = false;
     updateColor($prefersLight);
     function handleShow(e){
         e.stopPropagation();
@@ -26,7 +25,7 @@
 	}
     function handleDisplay(e){
         e.stopPropagation();
-        /* preferDesktop = !preferDesktop; */
+        prefersDesktop.set(!$prefersDesktop);
     }
     function updateColor(val){
         const root = document.documentElement;
@@ -73,7 +72,7 @@
                 {/if}
             </div>
             <div class="displayMode">
-                {#if preferDesktop}
+                {#if !$prefersDesktop}
                     <div class="icon desktop" on:click={handleDisplay}><MdFormatAlignJustify/></div>
                 {:else}
                     <div class="icon mobile" on:click={handleDisplay}><MdViewCarousel/></div>
