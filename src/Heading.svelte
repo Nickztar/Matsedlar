@@ -69,6 +69,7 @@
         text-overflow: ellipsis;
     }
     button {
+        user-select: none;
         border: none;
         background: none;
         border-radius: 10px;
