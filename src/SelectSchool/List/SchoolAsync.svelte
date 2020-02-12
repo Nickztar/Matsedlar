@@ -29,4 +29,24 @@
         scroll-behavior: smooth;
         overflow-y: scroll;
     }
+    /* width */
+    .container::-webkit-scrollbar {
+        width: 10px !important;
+        display: block;
+    }
+
+    /* Track */
+    .container::-webkit-scrollbar-track {
+        background: transparent !important; 
+    }
+    
+    /* Handle */
+    .container::-webkit-scrollbar-thumb {
+        background: var(--secondary) !important; 
+    }
+
+    /* Handle on hover */
+    .container::-webkit-scrollbar-thumb:hover {
+        background: #555 !important; 
+    }
 </style>
