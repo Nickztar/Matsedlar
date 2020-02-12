@@ -126,7 +126,7 @@
         color: var(--priority);
     }
     .handleMenu .icon{
-        animation: spin 650ms;
+        animation: spin 650ms ease-out;
     }
     .displayMode .icon{
         color: var(--light);
