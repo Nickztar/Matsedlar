@@ -2,10 +2,17 @@
     import { onMount } from 'svelte';
     import { todayDate } from '../../stores.js';
     export let data;
-    const day = data.day;
+    const day = emptyDay(data.day);
     const date = data.date;
     const food = data.foods;
     let isToday = getToday();
+    function emptyDay(dayStr){
+        if (dayStr == ''){
+            return 'Special'
+        }else{
+            return dayStr;
+        }
+    }
     function getToday(){
         const storeDate = $todayDate.substring(0,2).trim();
         const deskDate = date.substring(0,2).trim();

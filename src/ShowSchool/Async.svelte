@@ -35,7 +35,7 @@
     <Loading/>
 {:then data}
     {#if data.length > 0}
-        {#if displayReturn}
+        {#if displayReturn && !$prefersDesktop}
             <div class="returnIcon" on:click={returnHome}>
                 <TiHome/>
             </div>

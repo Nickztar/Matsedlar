@@ -24,8 +24,11 @@
             case 'TOR':
                 day = 'TORSDAG';
                 break;
-            default:
+            case 'FRE':
                 day = 'FREDAG';
+                break;
+            default:
+                day = 'Special';
         }
         return day;
     }
