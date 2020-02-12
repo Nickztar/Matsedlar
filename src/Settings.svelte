@@ -1,5 +1,6 @@
 <script>
     import { fly, fade } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
     import { prefersLight, prefersDesktop, menuOpen } from './stores.js';
     import IoIosCog from 'svelte-icons/io/IoIosCog.svelte';
     import IoMdMoon from 'svelte-icons/io/IoMdMoon.svelte';
@@ -64,10 +65,10 @@
 
 <div class="sideMenu">
     {#if $menuOpen}
-        <div class="handleMenu shown" in:fly={{x: 200, duration: 400 }}>
+        <div class="handleMenu shown" in:fly={{x: 200, duration: 600, easing: quintOut }}>
             <div class="icon" on:click={handleShow}><IoIosCog/></div>
         </div>
-        <div class="menuContent" in:fly={{x: 200, duration: 400 }}>
+        <div class="menuContent" in:fly={{x: 200, duration: 600, easing: quintOut }}>
             <div class="colorMode">
                 {#if !$prefersLight}
                     <div class="icon dark" on:click={handleColor}><IoIosSunny/></div>
@@ -84,7 +85,7 @@
             </div>
         </div>
     {:else}
-        <div class="handleMenu hidden" in:fly={{x: -100, duration: 400 }} out:fade={{duration: 0}}>
+        <div class="handleMenu hidden" in:fly={{x: -100, duration: 800, easing: quintOut }} out:fade={{duration: 0}}>
             <div class="icon" on:click={handleShow}><IoIosCog/></div>
         </div>
     {/if}
@@ -125,7 +126,7 @@
         color: var(--priority);
     }
     .handleMenu .icon{
-        animation: spin 450ms;
+        animation: spin 650ms;
     }
     .displayMode .icon{
         color: var(--light);
