@@ -47,7 +47,7 @@
         padding-left: 0.5rem;
     }
     header {
-        position: relative;
+        position: absolute;
         z-index: 1000;
         display: flex;
         text-align: center;

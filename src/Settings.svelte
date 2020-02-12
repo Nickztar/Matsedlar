@@ -96,7 +96,7 @@
         display: flex;
         z-index: 200000;
         height: 8vh;
-        top: 10.5%;
+        top: .5%;
         right: 0;
         position: absolute;
         color: var(--secondary)

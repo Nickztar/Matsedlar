@@ -2,6 +2,7 @@
 	import Heading from './Heading.svelte';
 	import Settings from './Settings.svelte';
 	import SelectCard from './SelectSchool/SelectCard.svelte';
+	import SchoolAsync from './SelectSchool/list/SchoolAsync.svelte';
 	import Async from './ShowSchool/Async.svelte';
 	import { hasSchool } from './stores.js';
 </script>
@@ -10,7 +11,7 @@
 <main>
 	<Settings/>
 	{#if !$hasSchool}
-		<SelectCard />
+		<SchoolAsync />
 	{:else}
 		<Async />
 	{/if}
@@ -31,6 +32,8 @@
 		--settings: rgb(27,27,27);
 	}
 	main{
+		position: relative;
+		top: 10%;
 		align-items: center;
 		display: flex;
 		flex-direction: column;
