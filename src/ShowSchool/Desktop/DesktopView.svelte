@@ -53,7 +53,7 @@
         overflow-y: auto;
     }
     .changeWeek{
-        display: flex;
+        display: inline-flex;
         margin: 3vh auto 0;
         width: 80%;
         height: 10vh;
