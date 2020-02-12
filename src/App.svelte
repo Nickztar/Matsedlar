@@ -2,7 +2,7 @@
 	import Heading from './Heading.svelte';
 	import Settings from './Settings.svelte';
 	import SelectCard from './SelectSchool/SelectCard.svelte';
-	import SchoolAsync from './SelectSchool/list/SchoolAsync.svelte';
+	import SchoolAsync from './SelectSchool/List/SchoolAsync.svelte';
 	import Async from './ShowSchool/Async.svelte';
 	import { hasSchool } from './stores.js';
 </script>
