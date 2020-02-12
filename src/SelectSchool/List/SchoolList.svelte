@@ -16,7 +16,6 @@
         }
     }
     function setSchool(selectedValue){
-        console.log(selectedValue);
         if(selectedValue){
             setCookie('school', JSON.stringify(selectedValue), 365);
             selectedSchool.set(selectedValue);
