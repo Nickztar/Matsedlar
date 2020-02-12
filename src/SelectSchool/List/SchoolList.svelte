@@ -50,6 +50,7 @@
 <style>
     *{
         box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
     }
     .navigator{
         position: absolute;
@@ -63,7 +64,7 @@
         z-index: 100;
     }
     .entries{
-        color: white;
+        color: var(--light);
     }
     .key{
         color: var(--priority);
