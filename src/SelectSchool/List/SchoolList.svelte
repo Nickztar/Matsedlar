@@ -79,6 +79,7 @@
         padding-left: 4vw;
         height: 6vh;
         width: 80%;
+        cursor: pointer;
     }
     p{
         margin: 0;
