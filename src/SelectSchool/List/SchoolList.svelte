@@ -68,6 +68,8 @@
     .key{
         color: var(--priority);
         background: var(--secondary);
+        display: flex;
+        align-items: center;
         height: 4vh;
         padding-left: 2vw;
         text-align: left;
