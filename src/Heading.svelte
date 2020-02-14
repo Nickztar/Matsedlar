@@ -107,6 +107,7 @@
     }
     .returner, .change{
         animation: spin 400ms ease-out;
+        overflow: visible;
     }
     @media screen and (max-width: 500px){
         .change{
