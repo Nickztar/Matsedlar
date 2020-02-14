@@ -53,7 +53,7 @@
         scroll-behavior: smooth;
         display: flex;
         flex-direction: column;
-        padding: 5vh 2vh 0;
+        padding: 5vh 2vh;
         overflow-x: visible;
         overflow-y: auto;
     }
@@ -61,7 +61,7 @@
         display: flex;
         margin: auto;
         width: 80%;
-        padding: 2vh 0;
+        padding-top: 2vh;
         align-items: center;
         justify-content: space-between;
     }
