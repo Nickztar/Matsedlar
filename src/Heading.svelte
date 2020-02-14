@@ -1,10 +1,14 @@
 <script>
     import GiKnifeFork from 'svelte-icons/gi/GiKnifeFork.svelte';
     import FaSyncAlt from 'svelte-icons/fa/FaSyncAlt.svelte';
-    import { hasSchool, selectedSchool, requestedWeek, homeWeek } from './stores.js';
+    import MdKeyboardReturn from 'svelte-icons/md/MdKeyboardReturn.svelte';
+    import { hasSchool, selectedSchool, requestedWeek, homeWeek, showAll } from './stores.js';
     function selectSchool(){
         hasSchool.set(false);
         requestedWeek.set($homeWeek);
+    }
+    function showLess(){
+        showAll.set(false);
     }
 </script>
 
@@ -21,6 +25,11 @@
     </div>
     {#if $hasSchool}
         <button on:click={selectSchool}><h3>Byt skola</h3><div class="change"><FaSyncAlt/></div></button>
+    {/if}
+    {#if $showAll}
+        <button class="returner" on:click={showLess}>
+            <div class="icon"><MdKeyboardReturn/></div>
+        </button>
     {/if}
 </header>
 

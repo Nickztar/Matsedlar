@@ -1,7 +1,7 @@
 <script>
     import FaArrowRight from 'svelte-icons/fa/FaArrowRight.svelte'
     import Select from 'svelte-select';
-    import { hasSchool, selectedSchool } from '../stores.js';
+    import { hasSchool, selectedSchool, showAll } from '../stores.js';
     const loadOptions = async (filterText) => {
         const response = await fetch(`https://matsedlarna.herokuapp.com/schools?school=${filterText}`);
         const json = await response.json();
@@ -14,6 +14,9 @@
             selectedSchool.set(selectedValue);
             hasSchool.set(true);
         }
+    }
+    function allSchools(){
+        showAll.set(true);
     }
     function setCookie(cname, cvalue, exdays) {
         let d = new Date();
@@ -31,6 +34,9 @@
         </div>
         <button id="submit" class="findLoc" on:click={setSchool}><div class="icon"><FaArrowRight /></div></button>
     </div>
+    <div class="moreOptions">
+        <button class="allSchools" on:click={allSchools}>Visa alla skolor</button>
+    </div>
 </div>
 
 
@@ -38,6 +44,25 @@
     * {
         padding: 0;
         margin: 0;
+    }
+    .moreOptions{
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        height: 8vh;
+        margin-top: 12vh;
+    }
+    .allSchools{
+        background: var(--secondary);
+        outline: none;
+        cursor: pointer;
+        border: 1px solid var(--lightBorder);
+        border-radius: 5px;
+        color: var(--priority);
+        box-shadow: 0 0 5px var(--strong-shadow);
+        margin: 0 auto;
+        width: 40%;
+        height: 100%;
     }
     .contain{
         width: 80%;
@@ -56,6 +81,7 @@
         color: var(--priority);
     }
     .conMenu{
+        cursor: pointer;
         --padding: 0 20px;
         --background: var(--secondary);
         --listBackground: var(--secondary);

@@ -1,9 +1,7 @@
 <script>
     import { hasSchool, selectedSchool } from '../../stores.js';
     export let list;
-    //Sort by label
     const sortedList = list.sort((a, b) => (a.label > b.label) ? 1 : -1);
-    //Create a directory by the first letter of the label
     const directory = ((map, array) => (array.forEach(school => {
         let arr = map.get(school.label[0]) || [];
         map.set(school.label[0], (arr.push(school), arr));

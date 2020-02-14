@@ -4,14 +4,18 @@
 	import SelectCard from './SelectSchool/SelectCard.svelte';
 	import SchoolAsync from './SelectSchool/List/SchoolAsync.svelte';
 	import Async from './ShowSchool/Async.svelte';
-	import { hasSchool } from './stores.js';
+	import { hasSchool, showAll } from './stores.js';
 </script>
 
 <Heading />
 <main>
 	<Settings/>
 	{#if !$hasSchool}
-		<SchoolAsync />
+		{#if $showAll}
+			<SchoolAsync />
+		{:else}
+			<SelectCard />
+		{/if}
 	{:else}
 		<Async />
 	{/if}
