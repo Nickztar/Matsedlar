@@ -24,9 +24,11 @@
 </script>
 
 <div class="container">
-    {#each foodData as food}
-        <DeskDay data={food}/>
-    {/each}
+    <div class="days">
+        {#each foodData as food}
+            <DeskDay data={food}/>
+        {/each}
+    </div>
     <div class="changeWeek">
         <button class="last" on:click={handleLast}>Förra</button>
         {#if displayReturn}
@@ -44,19 +46,22 @@
         padding: 0;
         box-sizing: border-box;
     }
+    .days{
+        margin-bottom: 2vh;
+    }
     .container{
         scroll-behavior: smooth;
         display: flex;
         flex-direction: column;
-        padding: 5vh 2vh;
+        padding: 5vh 2vh 0;
         overflow-x: visible;
         overflow-y: auto;
     }
     .changeWeek{
-        display: inline-flex;
+        display: flex;
         margin: auto;
         width: 80%;
-        padding-top: 2vh;
+        padding: 2vh 0;
         align-items: center;
         justify-content: space-between;
     }
