@@ -58,7 +58,7 @@ export function skipWeekend(){
 }
 function getCurrentColor(){
   let colorCookie = getCookie("color");
-  if (colorCookie != ""){
+  if (colorCookie !== ""){
     return colorCookie;
   }
   else if(!window.matchMedia) {
