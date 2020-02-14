@@ -58,7 +58,6 @@ export function skipWeekend(){
 }
 function getCurrentColor(){
   let colorCookie = getCookie("color");
-  console.log(colorCookie);
   if (colorCookie != ""){
     return colorCookie;
   }
