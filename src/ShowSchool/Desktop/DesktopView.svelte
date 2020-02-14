@@ -54,9 +54,9 @@
     }
     .changeWeek{
         display: inline-flex;
-        margin: 3vh auto 0;
+        margin: auto;
         width: 80%;
-        height: 10vh;
+        padding-top: 2vh;
         align-items: center;
         justify-content: space-between;
     }
