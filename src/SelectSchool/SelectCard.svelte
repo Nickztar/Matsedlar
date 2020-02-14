@@ -53,13 +53,12 @@
         margin-top: 12vh;
     }
     .allSchools{
-        background: var(--secondary);
+        background: var(--settings);
         outline: none;
         cursor: pointer;
-        border: 1px solid var(--lightBorder);
+        border: none;
         border-radius: 5px;
         color: var(--priority);
-        box-shadow: 0 0 5px var(--strong-shadow);
         margin: 0 auto;
         width: 40%;
         height: 100%;
