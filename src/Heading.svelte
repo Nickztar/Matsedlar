@@ -42,6 +42,7 @@
         height: 6vh;
         width: 6vh;
         color: var(--headerText);
+        animation: spin 400ms ease-out;
     }
     .change{
         color: var(--headerText);
@@ -112,5 +113,9 @@
         h3{
             display: none;
         }
+    }
+    @keyframes spin{
+        0%  {transform: rotate(0deg)}
+        100% {transform: rotate(-360deg)} 
     }
 </style>
