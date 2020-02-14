@@ -1,5 +1,5 @@
 <script>
-    import { hasSchool, selectedSchool } from '../../stores.js';
+    import { hasSchool, selectedSchool, showAll } from '../../stores.js';
     export let list;
     const sortedList = list.sort((a, b) => (a.label > b.label) ? 1 : -1);
     const directory = ((map, array) => (array.forEach(school => {
@@ -18,6 +18,7 @@
             setCookie('school', JSON.stringify(selectedValue), 365);
             selectedSchool.set(selectedValue);
             hasSchool.set(true);
+            showAll.set(false);
         }
     }
     function setCookie(cname, cvalue, exdays) {

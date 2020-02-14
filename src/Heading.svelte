@@ -42,7 +42,6 @@
         height: 6vh;
         width: 6vh;
         color: var(--headerText);
-        animation: spin 400ms ease-out;
     }
     .change{
         color: var(--headerText);
@@ -105,6 +104,9 @@
         height: 8vh;
         display: flex;
         align-items: center;
+    }
+    .returner, .change{
+        animation: spin 400ms ease-out;
     }
     @media screen and (max-width: 500px){
         .change{
