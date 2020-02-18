@@ -1,5 +1,6 @@
 <script>
-    import FaArrowRight from 'svelte-icons/fa/FaArrowRight.svelte'
+    import FaArrowRight from 'svelte-icons/fa/FaArrowRight.svelte';
+    import FaSortAlphaDown from 'svelte-icons/fa/FaSortAlphaDown.svelte';
     import Select from 'svelte-select';
     import { hasSchool, selectedSchool, showAll } from '../stores.js';
     const loadOptions = async (filterText) => {
@@ -36,6 +37,7 @@
     </div>
     <div class="moreOptions">
         <button class="allSchools" on:click={allSchools}>Visa alla skolor</button>
+        <button class="allSchoolsIcon" on:click={allSchools}><div class="sortIcon"><FaSortAlphaDown/></div></button>
     </div>
 </div>
 
@@ -51,6 +53,21 @@
         justify-content: right;
         height: 8vh;
         margin-top: 12vh;
+    }
+    .allSchoolsIcon{
+        background: var(--settings);
+        outline: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        color: var(--light);
+        margin: 0 auto;
+        padding: 1vh;
+        display: none;
+    }
+    .sortIcon{
+        width: 6vh;
+        height: 6vh;
     }
     .allSchools{
         background: var(--settings);
@@ -110,5 +127,13 @@
         height: 10vh;
         width: 10vh;
         box-shadow: 0 0 5px var(--strong-shadow);
+    }
+     @media screen and (max-width: 500px){
+        .allSchoolsIcon{
+            display: block;
+        }
+        .allSchools{
+            display: none;
+        }
     }
 </style>
