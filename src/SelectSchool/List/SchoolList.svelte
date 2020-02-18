@@ -7,12 +7,6 @@
         map.set(school.label[0], (arr.push(school), arr));
     }), map))(new Map(), sortedList);
     const dirArr = [...directory.entries()];
-    function gotoEl(){
-        const el = document.getElementById(`${this.innerHTML}`);
-        if (el != null){
-            el.scrollIntoView({behavior: "smooth", block: "start"})
-        }
-    }
     function setSchool(selectedValue){
         if(selectedValue){
             setCookie('school', JSON.stringify(selectedValue), 365);
