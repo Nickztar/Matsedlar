@@ -31,7 +31,7 @@
 
 <div class="navigator">
     {#each dirArr as entry}
-        <p on:click={gotoEl}>{entry[0]}</p>
+        <a href="#{entry[0]}">{entry[0]}</a>
     {/each}
 </div>
 {#each dirArr as entry}
@@ -58,7 +58,6 @@
         height: 80%;
         justify-content: center;
         flex-direction: column;
-        color: blue;
         z-index: 100;
     }
     .entries{
@@ -82,7 +81,7 @@
         width: 80%;
         cursor: pointer;
     }
-    p{
+    a{
         margin: 0;
         padding: 0;
         cursor: pointer;
