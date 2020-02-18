@@ -20,6 +20,13 @@
     function allSchools(){
         showAll.set(true);
     }
+    function findSchool(){
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(pos => alert(`${pos.coords.latitude} + ${pos.coords.longitude}`));
+        } else { 
+            console.log('Geolocation is not supported')
+        }
+    }
     function setCookie(cname, cvalue, exdays) {
         let d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -37,9 +44,9 @@
         <button id="submit" class="findLoc" on:click={setSchool}><div class="icon"><FaArrowRight /></div></button>
     </div>
     <div class="moreOptions">
-        <button class="allSchools" on:click={allSchools}>Hitta nära skolor</button>
+        <button class="allSchools" on:click={findSchool}>Hitta nära skolor</button>
         <button class="allSchools" on:click={allSchools}>Visa alla skolor</button>
-        <button class="allSchoolsIcon" on:click={allSchools}><div class="sortIcon"><MdLocationOn/></div></button>
+        <button class="allSchoolsIcon" on:click={findSchool}><div class="sortIcon"><MdLocationOn/></div></button>
         <button class="allSchoolsIcon" on:click={allSchools}><div class="sortIcon"><FaSortAlphaDown/></div></button>
     </div>
 </div>
