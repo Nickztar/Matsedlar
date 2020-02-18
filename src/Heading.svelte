@@ -1,7 +1,7 @@
 <script>
     import GiKnifeFork from 'svelte-icons/gi/GiKnifeFork.svelte';
     import FaSyncAlt from 'svelte-icons/fa/FaSyncAlt.svelte';
-    import MdKeyboardReturn from 'svelte-icons/md/MdKeyboardReturn.svelte';
+    import IoMdSearch from 'svelte-icons/io/IoMdSearch.svelte';
     import { hasSchool, selectedSchool, requestedWeek, homeWeek, showAll } from './stores.js';
     function selectSchool(){
         hasSchool.set(false);
@@ -28,7 +28,7 @@
     {/if}
     {#if $showAll}
         <button class="returner" on:click={showLess}>
-            <div class="icon"><MdKeyboardReturn/></div>
+            <div class="icon"><IoMdSearch/></div>
         </button>
     {/if}
 </header>
