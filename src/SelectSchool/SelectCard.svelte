@@ -1,6 +1,7 @@
 <script>
     import FaArrowRight from 'svelte-icons/fa/FaArrowRight.svelte';
     import FaSortAlphaDown from 'svelte-icons/fa/FaSortAlphaDown.svelte';
+    import MdLocationOn from 'svelte-icons/md/MdLocationOn.svelte';
     import Select from 'svelte-select';
     import { hasSchool, selectedSchool, showAll } from '../stores.js';
     const loadOptions = async (filterText) => {
@@ -36,7 +37,9 @@
         <button id="submit" class="findLoc" on:click={setSchool}><div class="icon"><FaArrowRight /></div></button>
     </div>
     <div class="moreOptions">
+        <button class="allSchools" on:click={allSchools}>Hitta nära skolor</button>
         <button class="allSchools" on:click={allSchools}>Visa alla skolor</button>
+        <button class="allSchoolsIcon" on:click={allSchools}><div class="sortIcon"><MdLocationOn/></div></button>
         <button class="allSchoolsIcon" on:click={allSchools}><div class="sortIcon"><FaSortAlphaDown/></div></button>
     </div>
 </div>
@@ -50,7 +53,7 @@
     .moreOptions{
         display: flex;
         align-items: center;
-        justify-content: right;
+        justify-content: space-evenly;
         height: 8vh;
         margin-top: 12vh;
     }
@@ -61,7 +64,6 @@
         border: none;
         border-radius: 5px;
         color: var(--light);
-        margin: 0 auto;
         padding: 1vh;
         display: none;
     }
@@ -76,7 +78,6 @@
         border: none;
         border-radius: 5px;
         color: var(--priority);
-        margin: 0 auto;
         width: 40%;
         height: 100%;
     }
