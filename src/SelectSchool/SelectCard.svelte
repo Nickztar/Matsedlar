@@ -85,7 +85,7 @@
         border: none;
         border-radius: 5px;
         color: var(--priority);
-        width: 40%;
+        padding: 2vh;
         height: 100%;
     }
     .contain{
