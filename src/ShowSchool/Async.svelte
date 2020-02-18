@@ -55,10 +55,11 @@
 <style>
     .returnIcon{
         position: absolute;
-        top: 0;
+        z-index: 1000;
+        top: 0.5%;
         left: 1%;
-        width: 5vh;
-        height: 5vh;
+        width: 6vh;
+        height: 7vh;
         color: var(--priority);
         cursor: pointer;
     }
