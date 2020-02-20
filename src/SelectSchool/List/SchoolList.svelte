@@ -7,12 +7,6 @@
         map.set(school.label[0], (arr.push(school), arr));
     }), map))(new Map(), sortedList);
     const dirArr = [...directory.entries()];
-    function gotoEl(){
-        const el = document.getElementById(`${this.innerHTML}`);
-        if (el != null){
-            el.scrollIntoView({behavior: "smooth", block: "start"})
-        }
-    }
     function setSchool(selectedValue){
         if(selectedValue){
             setCookie('school', JSON.stringify(selectedValue), 365);
@@ -31,7 +25,7 @@
 
 <div class="navigator">
     {#each dirArr as entry}
-        <p on:click={gotoEl}>{entry[0]}</p>
+        <a href="#{entry[0]}">{entry[0]}</a>
     {/each}
 </div>
 {#each dirArr as entry}
@@ -58,7 +52,6 @@
         height: 80%;
         justify-content: center;
         flex-direction: column;
-        color: blue;
         z-index: 100;
     }
     .entries{
@@ -82,7 +75,7 @@
         width: 80%;
         cursor: pointer;
     }
-    p{
+    a{
         margin: 0;
         padding: 0;
         cursor: pointer;

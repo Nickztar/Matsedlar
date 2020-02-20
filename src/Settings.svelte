@@ -125,8 +125,11 @@
         box-shadow: none;
         color: var(--priority);
     }
-    .handleMenu .icon{
+    .hidden .icon{
         animation: spin 650ms ease-out;
+    }
+    .shown .icon{
+        animation: spin2 800ms -100ms ease-out;
     }
     .displayMode .icon{
         color: var(--light);
@@ -155,7 +158,11 @@
         padding-right: 0.2rem;
     }
     @keyframes spin{
-        0%  {transform: rotate(0deg)}
-        100% {transform: rotate(-360deg)} 
+        0%  {transform: rotate(-360deg)}
+        100% {transform: rotate(0deg)} 
+    }
+    @keyframes spin2{
+        0%  {transform: rotate(360deg)}
+        100% {transform: rotate(0deg)} 
     }
 </style>

@@ -1,12 +1,39 @@
 <script>
-    import FaArrowRight from 'svelte-icons/fa/FaArrowRight.svelte'
+    import FaArrowRight from 'svelte-icons/fa/FaArrowRight.svelte';
+    import FaSortAlphaDown from 'svelte-icons/fa/FaSortAlphaDown.svelte';
+    import MdLocationOn from 'svelte-icons/md/MdLocationOn.svelte';
+    import Loading from '../Loading.svelte';
     import Select from 'svelte-select';
+    import { onMount } from 'svelte';
     import { hasSchool, selectedSchool, showAll } from '../stores.js';
+    let findingSchool = false;
+    let noSchool = false;
+    let input;
+    onMount(() => {
+        input = document.getElementsByTagName('input')[0];
+    })
     const loadOptions = async (filterText) => {
         const response = await fetch(`https://matsedlarna.herokuapp.com/schools?school=${filterText}`);
         const json = await response.json();
         return json;
     };
+    const closestSchool = async (lat, long) => {
+        if(noSchool) return;
+        const url = `https://api.skolverket.se/planned-educations/school-units?distance=0.5&latitude=${lat}&longitude=${long}&size=1`;
+        const response = await fetch(url, { headers: { "Accept": "application/vnd.skolverket.plannededucations.api.v2.hal+json" }});
+        const data = await response.json();
+        if (data.body.page.totalElements > 0){
+            const name = data.body._embedded.listedSchoolUnits[0].name.replace(/[0-9]/g, '').trim()
+            const school = await loadOptions(name);
+            if (school.length > 0){
+                selectedValue = school[0];
+            }else{
+                noSchool = true;
+            }
+        } else{
+            noSchool = true;
+        }
+    }
     let selectedValue = null;
     function setSchool(){
         if(selectedValue){
@@ -18,6 +45,22 @@
     function allSchools(){
         showAll.set(true);
     }
+    function findSchool(){
+        if (navigator.geolocation) {
+            findingSchool = true;
+            navigator.geolocation.getCurrentPosition(async pos => {
+                await closestSchool(pos.coords.latitude, pos.coords.longitude);
+                handleError();
+            }, handleError());
+        } else { 
+            handleError();
+            console.log('Geolocation is not supported')
+        }
+    }
+    function handleError(){
+        findingSchool = false;
+        input.focus();
+    }
     function setCookie(cname, cvalue, exdays) {
         let d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -25,6 +68,12 @@
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 </script>
+
+{#if findingSchool}
+    <div class="modal">
+        <Loading />
+    </div>
+{/if}
 
 <div class="contain">
     <h1>Hitta din skola</h1>
@@ -35,8 +84,16 @@
         <button id="submit" class="findLoc" on:click={setSchool}><div class="icon"><FaArrowRight /></div></button>
     </div>
     <div class="moreOptions">
+        <button class="allSchools { noSchool ? 'disable' : ''}" on:click={noSchool ? ()=>{} : findSchool}>Hitta nära skolor</button>
         <button class="allSchools" on:click={allSchools}>Visa alla skolor</button>
+        <button class="allSchoolsIcon { noSchool ? 'disable' : ''}" on:click={findSchool}><div class="sortIcon"><MdLocationOn/></div></button>
+        <button class="allSchoolsIcon" on:click={allSchools}><div class="sortIcon"><FaSortAlphaDown/></div></button>
     </div>
+    {#if noSchool}
+        <div class="error">
+            <h4>Kunde inte hitta en skola...</h4>
+        </div>
+    {/if}
 </div>
 
 
@@ -44,13 +101,45 @@
     * {
         padding: 0;
         margin: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+    div .disable{
+        opacity: 0.7;
+        cursor: default;
+    }
+    .modal{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+    }
+    .error{
+        text-align: center;
+        padding-top: 5vh;
+        color: var(--priority);
+        opacity: 0.6;
     }
     .moreOptions{
         display: flex;
         align-items: center;
-        justify-content: right;
+        justify-content: space-evenly;
         height: 8vh;
         margin-top: 12vh;
+    }
+    .allSchoolsIcon{
+        background: var(--settings);
+        outline: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        color: var(--light);
+        padding: 1vh;
+        display: none;
+    }
+    .sortIcon{
+        width: 6vh;
+        height: 6vh;
     }
     .allSchools{
         background: var(--settings);
@@ -59,8 +148,7 @@
         border: none;
         border-radius: 5px;
         color: var(--priority);
-        margin: 0 auto;
-        width: 40%;
+        padding: 2vh;
         height: 100%;
     }
     .contain{
@@ -110,5 +198,13 @@
         height: 10vh;
         width: 10vh;
         box-shadow: 0 0 5px var(--strong-shadow);
+    }
+     @media screen and (max-width: 500px){
+        .allSchoolsIcon{
+            display: block;
+        }
+        .allSchools{
+            display: none;
+        }
     }
 </style>
