@@ -4,9 +4,14 @@
     import MdLocationOn from 'svelte-icons/md/MdLocationOn.svelte';
     import Loading from '../Loading.svelte';
     import Select from 'svelte-select';
+    import { onMount } from 'svelte';
     import { hasSchool, selectedSchool, showAll } from '../stores.js';
     let findingSchool = false;
     let noSchool = false;
+    let input;
+    onMount(() => {
+        input = document.getElementsByTagName('input')[0];
+    })
     const loadOptions = async (filterText) => {
         const response = await fetch(`https://matsedlarna.herokuapp.com/schools?school=${filterText}`);
         const json = await response.json();
@@ -54,7 +59,7 @@
     }
     function handleError(){
         findingSchool = false;
-        document.getElementsByTagName('input')[0].focus();
+        input.focus();
     }
     function setCookie(cname, cvalue, exdays) {
         let d = new Date();
