@@ -20,6 +20,7 @@ self.addEventListener('install', async e => {
 });
 
 self.addEventListener('activate', async e => {
+  await clients.claim();
   const cacheKeys = await caches.keys();
   const badCaches = cacheKeys.filter(key => {
     return key != staticCacheName && key != dynamicCacheName;
