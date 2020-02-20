@@ -45,14 +45,17 @@
             findingSchool = true;
             navigator.geolocation.getCurrentPosition(async pos => {
                 await closestSchool(pos.coords.latitude, pos.coords.longitude);
-                findingSchool = false;
-            }, () => findingSchool = false);
+                handleError();
+            }, handleError());
         } else { 
-            findingSchool = false;
+            handleError();
             console.log('Geolocation is not supported')
         }
     }
-    
+    function handleError(){
+        findingSchool = false;
+        document.getElementsByTagName('input')[0].focus();
+    }
     function setCookie(cname, cvalue, exdays) {
         let d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
