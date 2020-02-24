@@ -44,7 +44,8 @@
         }
     }
     function handleError(){
-        noSchool.set(false);
+        loadingSchools.set(false);
+        noSchool.set(true);
         input.focus();
     }
     function setCookie(cname, cvalue, exdays) {
