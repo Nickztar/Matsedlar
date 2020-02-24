@@ -41,6 +41,7 @@
             root.style.setProperty('--header', '#FF4C4Cd0');
             root.style.setProperty('--headerText', '#eee');
             root.style.setProperty('--settings', 'rgb(155, 153, 153, 0.7)');
+            root.style.setProperty('--modal', 'rgba(214, 214, 214,0.95)');
 
         }
         else{
@@ -53,6 +54,7 @@
             root.style.setProperty('--header', 'rgb(14, 14, 14)');
             root.style.setProperty('--headerText', 'rgb(255, 187, 51)');
             root.style.setProperty('--settings', 'rgb(27,27,27)');
+            root.style.setProperty('--modal', 'rgba(41, 41, 41,0.95)');
         }
     }
     function setCookie(cname, cvalue, exdays) {

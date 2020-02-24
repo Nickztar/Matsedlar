@@ -13,6 +13,11 @@ export const requestedWeek = new writable(skipWeekend());
 export const prefersLight = new writable(getCurrentColor());
 export const prefersDesktop = new writable(getCookie('desktop'));
 export const menuOpen = new writable(false);
+export const findingSchool = new writable(false);
+export const loadingSchools = writable(false);
+export const noSchool = new writable(false);
+export const lat = new writable(56.666768);
+export const long = new writable(12.847587);
 
 function getDate() {
   let today = new Date().toLocaleDateString('en-GB', {

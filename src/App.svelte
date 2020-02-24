@@ -4,12 +4,14 @@
 	import SelectCard from './SelectSchool/SelectCard.svelte';
 	import SchoolAsync from './SelectSchool/List/SchoolAsync.svelte';
 	import Async from './ShowSchool/Async.svelte';
-	import { hasSchool, showAll } from './stores.js';
+	import { hasSchool, showAll, findingSchool } from './stores.js';
 </script>
 
 <Heading />
 <main>
-	<Settings/>
+	{#if !$findingSchool}
+		<Settings/>
+	{/if}
 	{#if !$hasSchool}
 		{#if $showAll}
 			<SchoolAsync />
@@ -27,6 +29,7 @@
 		--lightBorder:rgba(255, 255, 255, 0.5);   
 		--lightArrow:rgba(255, 255, 255);   
 		--secondary: rgba(41, 41, 41);
+		--modal: rgba(41, 41, 41,0.95);
 		--priority: rgb(255, 187, 51);
 		--strong-shadow: rgba(27,27,27);
 		--primary: rgb(51, 51, 57);
@@ -52,6 +55,7 @@
 			--light: rgb(14, 14, 14);
 			--priority: #ff2727d0;
 			--secondary: rgb(214, 214, 214);
+			--modal: rgba(214, 214, 214,0.95);
 			--primary: #eee;
 			--lightBorder:rgb(155, 153, 153, 0.7);   
 			--lightArrow:rgb(109, 109, 109);
