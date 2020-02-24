@@ -37,13 +37,13 @@
                 lat.set(pos.coords.latitude);
                 long.set(pos.coords.longitude);
                 findingSchool.set(true);
-            }, handleError(), {maximumAge:10000, timeout:5000, enableHighAccuracy: true});
+            }, (err) => {handleError(err)}, { enableHighAccuracy: true });
         } else { 
             handleError();
             console.log('Geolocation is not supported')
         }
     }
-    function handleError(){
+    function handleError(err = ''){
         loadingSchools.set(false);
         noSchool.set(true);
         input.focus();
@@ -76,7 +76,7 @@
     <div class="moreOptions">
         <button class="allSchools { $noSchool ? 'disable' : ''}" on:click={$noSchool ? ()=>{} : findSchool}>Hitta nära skolor</button>
         <button class="allSchools" on:click={allSchools}>Visa alla skolor</button>
-        <button class="allSchoolsIcon { $noSchool ? 'disable' : ''}" on:click={findSchool}><div class="sortIcon"><MdLocationOn/></div></button>
+        <button class="allSchoolsIcon { $noSchool ? 'disable' : ''}" on:click={$noSchool ? ()=>{} : findSchool}><div class="sortIcon"><MdLocationOn/></div></button>
         <button class="allSchoolsIcon" on:click={allSchools}><div class="sortIcon"><FaSortAlphaDown/></div></button>
     </div>
 </div>
