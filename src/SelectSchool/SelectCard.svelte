@@ -74,7 +74,7 @@
         <button id="submit" class="findLoc" on:click={setSchool}><div class="icon"><FaArrowRight /></div></button>
     </div>
     <div class="moreOptions">
-        <button class="allSchools { $noSchool ? 'disable' : ''}" on:click={$noSchool ? ()=>{} : findSchool}>Hitta nära skolor</button>
+        <button class="allSchools { $noSchool ? 'disable' : ''}" on:click={$noSchool ? ()=>{} : findSchool}>Hitta närmaste skolor</button>
         <button class="allSchools" on:click={allSchools}>Visa alla skolor</button>
         <button class="allSchoolsIcon { $noSchool ? 'disable' : ''}" on:click={$noSchool ? ()=>{} : findSchool}><div class="sortIcon"><MdLocationOn/></div></button>
         <button class="allSchoolsIcon" on:click={allSchools}><div class="sortIcon"><FaSortAlphaDown/></div></button>
