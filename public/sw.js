@@ -34,11 +34,12 @@ self.addEventListener('activate', async e => {
 self.addEventListener('fetch', async e => {
   const req = e.request;
   const url = new URL(req.url);
-
-  if (url.origin === location.origin) {
-    e.respondWith(cacheFirst(req));
-  } else {
-    e.respondWith(networkAndCache(req));
+  if (req.method === 'GET'){
+    if (url.origin === location.origin) {
+      e.respondWith(cacheFirst(req));
+    } else {
+      e.respondWith(networkAndCache(req));
+    }
   }
 });
 

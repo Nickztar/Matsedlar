@@ -79,6 +79,11 @@
         <button class="allSchoolsIcon { $noSchool ? 'disable' : ''}" on:click={$noSchool ? ()=>{} : findSchool}><div class="sortIcon"><MdLocationOn/></div></button>
         <button class="allSchoolsIcon" on:click={allSchools}><div class="sortIcon"><FaSortAlphaDown/></div></button>
     </div>
+    {#if $noSchool}
+        <div class="error">
+            <h4>Kunde inte hitta position...</h4>
+        </div>
+    {/if}
 </div>
 
 
@@ -92,6 +97,12 @@
     div .disable{
         opacity: 0.7;
         cursor: default;
+    }
+    .error{
+        text-align: center;
+        padding-top: 5vh;
+        color: var(--priority);
+        opacity: 0.6;
     }
     .background{
         position: absolute;
