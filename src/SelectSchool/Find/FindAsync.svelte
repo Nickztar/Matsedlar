@@ -26,7 +26,7 @@
     }
     let schoolPromise = closestSchool();
     async function getSchools(names){
-        const response = await fetch(`http://localhost:4000/schools`, {
+        const response = await fetch(`https://matsedlarna.herokuapp.com/schools`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

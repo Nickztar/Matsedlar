@@ -37,7 +37,7 @@
                 lat.set(pos.coords.latitude);
                 long.set(pos.coords.longitude);
                 findingSchool.set(true);
-            }, handleError());
+            }, handleError(), {maximumAge:10000, timeout:5000, enableHighAccuracy: true});
         } else { 
             handleError();
             console.log('Geolocation is not supported')
