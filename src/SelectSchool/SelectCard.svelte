@@ -78,11 +78,6 @@
         <button class="allSchoolsIcon { $noSchool ? 'disable' : ''}" on:click={findSchool}><div class="sortIcon"><MdLocationOn/></div></button>
         <button class="allSchoolsIcon" on:click={allSchools}><div class="sortIcon"><FaSortAlphaDown/></div></button>
     </div>
-    {#if $noSchool}
-        <div class="error">
-            <h4>Kunde inte hitta en skola...</h4>
-        </div>
-    {/if}
 </div>
 
 
@@ -107,12 +102,6 @@
         top: 0;
         z-index: 200001;
         background-color: rgba(0,0,0,.5);
-    }
-    .error{
-        text-align: center;
-        padding-top: 5vh;
-        color: var(--priority);
-        opacity: 0.6;
     }
     .moreOptions{
         display: flex;
