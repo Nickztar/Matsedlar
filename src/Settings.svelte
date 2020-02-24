@@ -1,7 +1,7 @@
 <script>
     import { fly, fade } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
-    import { prefersLight, prefersDesktop, menuOpen } from './stores.js';
+    import { prefersLight, prefersDesktop, menuOpen, hasSchool } from './stores.js';
     import IoIosCog from 'svelte-icons/io/IoIosCog.svelte';
     import IoMdMoon from 'svelte-icons/io/IoMdMoon.svelte';
     import IoIosSunny from 'svelte-icons/io/IoIosSunny.svelte';
@@ -78,13 +78,16 @@
                     <div class="icon light" on:click={handleColor}><IoMdMoon/></div>
                 {/if}
             </div>
-            <div class="displayMode">
-                {#if !$prefersDesktop}
-                    <div class="icon desktop" on:click={handleDisplay}><MdFormatAlignJustify/></div>
-                {:else}
-                    <div class="icon mobile" on:click={handleDisplay}><MdViewCarousel/></div>
-                {/if}
-            </div>
+            {#if $hasSchool}
+                <div class="displayMode">
+                    {#if !$prefersDesktop}
+                        <div class="icon desktop" on:click={handleDisplay}><MdFormatAlignJustify/></div>
+                    {:else}
+                        <div class="icon mobile" on:click={handleDisplay}><MdViewCarousel/></div>
+                    {/if}
+                </div>
+            {/if}
+            
         </div>
     {:else}
         <div class="handleMenu hidden" in:fly={{x: -100, duration: 800, easing: quintOut }} out:fade={{duration: 0}}>
