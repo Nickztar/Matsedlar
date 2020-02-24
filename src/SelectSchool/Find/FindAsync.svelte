@@ -59,7 +59,7 @@
 </script>
 
 <button on:click={close} class="close"><MdClose/></button>
-<div class="modal">
+<div class="modal" on:click={e => e.stopPropagation()}>
     {#await schoolPromise}
         <Loading />
     {:then schools}
