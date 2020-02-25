@@ -11,7 +11,7 @@ export const selectedSchool = new writable(getCookie('school'));
 export const homeWeek = new readable(skipWeekend());
 export const requestedWeek = new writable(skipWeekend());
 export const prefersLight = new writable(getCurrentColor());
-export const prefersDesktop = new writable(getCookie('desktop'));
+export const prefersDesktop = new writable(getCurrentDesktop());
 export const menuOpen = new writable(false);
 export const findingSchool = new writable(false);
 export const loadingSchools = writable(false);
@@ -71,6 +71,18 @@ function getCurrentColor(){
   } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
     return false;
   } else{
+    return true;
+  }
+}
+function getCurrentDesktop(){
+  let desktopCookie = getCookie("desktop");
+  if (desktopCookie !== ""){
+    return desktopCookie;
+  }
+  else if(window.innerWidth < 545) {
+    return false;
+  }
+  else{
     return true;
   }
 }

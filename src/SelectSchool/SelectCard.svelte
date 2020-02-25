@@ -74,14 +74,14 @@
         <button id="submit" class="findLoc" on:click={setSchool}><div class="icon"><FaArrowRight /></div></button>
     </div>
     <div class="moreOptions">
-        <button class="allSchools { $noSchool ? 'disable' : ''}" on:click={$noSchool ? ()=>{} : findSchool}>Hitta närmaste skolor</button>
+        <button class="allSchools { $noSchool ? 'disable' : ''}" on:click={$noSchool ? ()=>{} : findSchool}>Lokalisera skolor</button>
         <button class="allSchools" on:click={allSchools}>Visa alla skolor</button>
         <button class="allSchoolsIcon { $noSchool ? 'disable' : ''}" on:click={$noSchool ? ()=>{} : findSchool}><div class="sortIcon"><MdLocationOn/></div></button>
         <button class="allSchoolsIcon" on:click={allSchools}><div class="sortIcon"><FaSortAlphaDown/></div></button>
     </div>
     {#if $noSchool}
         <div class="error">
-            <h4>Kunde inte hitta position...</h4>
+            <h4>Kunde inte hämta din position...</h4>
         </div>
     {/if}
 </div>

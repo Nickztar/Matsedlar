@@ -91,7 +91,9 @@
         top: 0;
         right: 0;
     }
+    
     .modal{
+        position: relative;
         transition: all 0.5s;
         background-color: var(--modal);
         display: flex;
