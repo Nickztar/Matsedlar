@@ -6,11 +6,10 @@ const assets = [
   '/global.css',
   '/extra.css',
   '/build/bundle.css',
-  '/build/bundle.css.map',
   '/build/bundle.js',
-  '/build/bundle.js.map',
   'https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap',
-  'https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2',
+  'https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2',
+  'https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2'
 ];
 
 self.addEventListener('install', async e => {
@@ -35,7 +34,7 @@ self.addEventListener('fetch', async e => {
   const req = e.request;
   const url = new URL(req.url);
   if (req.method === 'GET'){
-    if (url.origin === location.origin) {
+    if (url.origin === location.origin || url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com') {
       e.respondWith(cacheFirst(req));
     } else {
       e.respondWith(networkAndCache(req));
