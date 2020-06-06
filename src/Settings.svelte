@@ -1,17 +1,22 @@
 <script>
     import { fly, fade } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
-    import { prefersLight, prefersDesktop, menuOpen, hasSchool } from './stores.js';
+    import { prefersLight, prefersDesktop, menuOpen, hasSchool, infoShown } from './stores.js';
     import IoIosCog from 'svelte-icons/io/IoIosCog.svelte';
     import IoMdMoon from 'svelte-icons/io/IoMdMoon.svelte';
     import IoIosSunny from 'svelte-icons/io/IoIosSunny.svelte';
     import MdViewCarousel from 'svelte-icons/md/MdViewCarousel.svelte';
     import MdFormatAlignJustify from 'svelte-icons/md/MdFormatAlignJustify.svelte';
+    import MdInfo from 'svelte-icons/md/MdInfo.svelte'
     document.addEventListener('click', handleBodyClick)
     updateColor($prefersLight);
     function handleShow(e){
         e.stopPropagation();
         menuOpen.set(!$menuOpen);
+    }
+    function handleInfo(e){
+        e.stopPropagation();
+        infoShown.set(true);
     }
     function handleColor(e){
         e.stopPropagation();
@@ -87,7 +92,13 @@
                     {/if}
                 </div>
             {/if}
-            
+            <div class="info">
+                {#if !$prefersLight}
+                    <div class="icon dark" on:click={handleInfo}><MdInfo/></div>
+                {:else}
+                    <div class="icon light" on:click={handleInfo}><MdInfo/></div>
+                {/if}
+            </div>
         </div>
     {:else}
         <div class="handleMenu hidden" in:fly={{x: -100, duration: 800, easing: quintOut }} out:fade={{duration: 0}}>
@@ -138,6 +149,10 @@
     }
     .displayMode .icon{
         color: var(--light);
+    }
+    .info .icon{
+        color: var(--light);
+        padding: 2px;
     }
     .shown{
         background: var(--settings); 

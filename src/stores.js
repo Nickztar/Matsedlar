@@ -4,6 +4,7 @@ import {
 } from 'svelte/store';
 
 export const hasSchool = new writable(testForSchool());
+export const infoShown = new writable(false);
 export const showAll = new writable(false);
 export const gotoIndex = new writable(0);
 export const todayDate = new readable(getDate());

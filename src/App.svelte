@@ -1,14 +1,18 @@
 <script>
 	import Heading from './Heading.svelte';
 	import Settings from './Settings.svelte';
+	import Info from './Info.svelte';
 	import SelectCard from './SelectSchool/SelectCard.svelte';
 	import SchoolAsync from './SelectSchool/List/SchoolAsync.svelte';
 	import Async from './ShowSchool/Async.svelte';
-	import { hasSchool, showAll, findingSchool } from './stores.js';
+	import { hasSchool, showAll, findingSchool, infoShown } from './stores.js';
 </script>
 
 <Heading />
 <main>
+{#if $infoShown}
+	<Info/>
+{:else}
 	{#if !$findingSchool}
 		<Settings/>
 	{/if}
@@ -21,6 +25,8 @@
 	{:else}
 		<Async />
 	{/if}
+{/if}
+	
 </main>
 		
 <style>

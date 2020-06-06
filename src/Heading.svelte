@@ -2,10 +2,14 @@
     import GiKnifeFork from 'svelte-icons/gi/GiKnifeFork.svelte';
     import FaSyncAlt from 'svelte-icons/fa/FaSyncAlt.svelte';
     import IoMdSearch from 'svelte-icons/io/IoMdSearch.svelte';
-    import { hasSchool, selectedSchool, requestedWeek, homeWeek, showAll } from './stores.js';
+    import MdKeyboardReturn from 'svelte-icons/md/MdKeyboardReturn.svelte'
+    import { hasSchool, selectedSchool, requestedWeek, homeWeek, showAll, infoShown } from './stores.js';
     function selectSchool(){
         hasSchool.set(false);
         requestedWeek.set($homeWeek);
+    }
+    function handleReturn(){
+        infoShown.set(false);
     }
     function showLess(){
         showAll.set(false);
@@ -23,14 +27,19 @@
             <h1>Matsedlar</h1>
         {/if}
     </div>
-    {#if $hasSchool}
-        <button on:click={selectSchool}><h3>Byt skola</h3><div class="change"><FaSyncAlt/></div></button>
+    {#if $infoShown}
+        <button on:click={handleReturn}><h3>Återgå</h3><div class="change"><MdKeyboardReturn/></div></button>
+    {:else}
+        {#if $hasSchool}
+            <button on:click={selectSchool}><h3>Byt skola</h3><div class="change"><FaSyncAlt/></div></button>
+        {/if}
+        {#if $showAll}
+            <button class="returner" on:click={showLess}>
+                <div class="icon"><IoMdSearch/></div>
+            </button>
+        {/if}
     {/if}
-    {#if $showAll}
-        <button class="returner" on:click={showLess}>
-            <div class="icon"><IoMdSearch/></div>
-        </button>
-    {/if}
+    
 </header>
 
 <style>
