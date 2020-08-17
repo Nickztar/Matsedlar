@@ -1,110 +1,219 @@
 <!DOCTYPE html>
 <html lang="sv">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,height=device-height,initial-scale=1"
+        />
+        <!-- Primary Meta Tags -->
+        <title>Matsedlar</title>
+        <meta name="title" content="Matsedlar för 140+ skolor" />
+        <meta
+            name="description"
+            content="Se dagens lunch för 140+ skolor när du vill, hur du vill. Med vår snabba och användarvänliga sida kan du snabbt titta vad som serveras i skolan."
+        />
 
-<head>
-	<meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,height=device-height,initial-scale=1'>
-		<!-- Primary Meta Tags -->
-	<title>Matsedlar</title>
-	<meta name="title" content="Matsedlar för 140+ skolor">
-	<meta name="description" content="Se dagens lunch för 140+ skolor när du vill, hur du vill. Med vår snabba och användarvänliga sida kan du snabbt titta vad som serveras i skolan.">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://matsedlar.se/" />
+        <meta property="og:title" content="Matsedlar för 140+ skolor" />
+        <meta
+            property="og:description"
+            content="Se dagens lunch för 140+ skolor när du vill, hur du vill. Med vår snabba och användarvänliga sida kan du snabbt titta vad som serveras i skolan."
+        />
+        <meta property="og:image" content="/favicon.png" />
 
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://matsedlar.se/">
-	<meta property="og:title" content="Matsedlar för 140+ skolor">
-	<meta property="og:description" content="Se dagens lunch för 140+ skolor när du vill, hur du vill. Med vår snabba och användarvänliga sida kan du snabbt titta vad som serveras i skolan.">
-	<meta property="og:image" content="/favicon.png">
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://matsedlar.se/" />
+        <meta property="twitter:title" content="Matsedlar för 140+ skolor" />
+        <meta
+            property="twitter:description"
+            content="Se dagens lunch för 140+ skolor när du vill, hur du vill. Med vår snabba och användarvänliga sida kan du snabbt titta vad som serveras i skolan."
+        />
+        <meta property="twitter:image" content="/favicon.png" />
+        <meta
+            name="google-site-verification"
+            content="l9OI2_qlXWURUE33654NEojyzep4_Ib-_fFQHEnTygE"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta name="theme-color" content="rgb(14,14,14)" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-157367975-1"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://matsedlar.se/">
-	<meta property="twitter:title" content="Matsedlar för 140+ skolor">
-	<meta property="twitter:description" content="Se dagens lunch för 140+ skolor när du vill, hur du vill. Med vår snabba och användarvänliga sida kan du snabbt titta vad som serveras i skolan.">
-	<meta property="twitter:image" content="/favicon.png">
-	<meta name="google-site-verification" content="l9OI2_qlXWURUE33654NEojyzep4_Ib-_fFQHEnTygE" />
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="theme-color" content="rgb(14,14,14)">
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157367975-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+            gtag("config", "UA-157367975-1");
+        </script>
 
-		gtag('config', 'UA-157367975-1');
-	</script>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
 
-	<link rel='icon' type='image/png' href='/favicon.png'>
-	<link rel='shortcut icon' type='image/png' href='/favicon.png'>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="assets/apple-icon-180.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="167x167"
+            href="assets/apple-icon-167.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="assets/apple-icon-152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="assets/apple-icon-120.png"
+        />
 
-	<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-icon-180.png">
-	<link rel="apple-touch-icon" sizes="167x167" href="assets/apple-icon-167.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="assets/apple-icon-152.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="assets/apple-icon-120.png">
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-2048-2732.png"
+            media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-2732-2048.png"
+            media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-1668-2388.png"
+            media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-2388-1668.png"
+            media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-1668-2224.png"
+            media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-2224-1668.png"
+            media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-1536-2048.png"
+            media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-2048-1536.png"
+            media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-1242-2688.png"
+            media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-2688-1242.png"
+            media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-1125-2436.png"
+            media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-2436-1125.png"
+            media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-828-1792.png"
+            media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-1792-828.png"
+            media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-1242-2208.png"
+            media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-2208-1242.png"
+            media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-750-1334.png"
+            media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-1334-750.png"
+            media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-640-1136.png"
+            media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        />
+        <link
+            rel="apple-touch-startup-image"
+            href="assets/apple-splash-dark-1136-640.png"
+            media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        />
 
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-2048-2732.png"
-		media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-2732-2048.png"
-		media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-1668-2388.png"
-		media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-2388-1668.png"
-		media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-1668-2224.png"
-		media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-2224-1668.png"
-		media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-1536-2048.png"
-		media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-2048-1536.png"
-		media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-1242-2688.png"
-		media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-2688-1242.png"
-		media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-1125-2436.png"
-		media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-2436-1125.png"
-		media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-828-1792.png"
-		media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-1792-828.png"
-		media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-1242-2208.png"
-		media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-2208-1242.png"
-		media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-750-1334.png"
-		media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-1334-750.png"
-		media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-640-1136.png"
-		media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-	<link rel="apple-touch-startup-image" href="assets/apple-splash-dark-1136-640.png"
-		media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+        <link rel="stylesheet" href="extra.css" />
+        <link rel="stylesheet" href="/global.css" />
+        <link rel="stylesheet" href="/build/bundle.css" />
+        <link rel="manifest" href="/manifest.json" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+            rel="stylesheet"
+        />
+        <script defer src="/build/bundle.js"></script>
+    </head>
 
-	<link rel="stylesheet" href="extra.css">
-	<link rel='stylesheet' href='/global.css'>
-	<link rel='stylesheet' href='/build/bundle.css'>
-	<link rel="manifest" href="/manifest.json">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-	<script defer src='/build/bundle.js'></script>
-</head>
+    <body></body>
 
-<body>
-	
-</body>
+    <noscript>Please enable javascript for this website to work!</noscript>
 
-<noscript>Please enable javascript for this website to work!</noscript>
-
-<script>
-	if ('serviceWorker' in navigator) {
-		window.addEventListener('load', function() {
-			navigator.serviceWorker.register('/sw.js');
-		});
-	}
-</script>
-
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("/sw.js");
+            });
+        }
+        console.log(
+            `%c ________________________________________
+< mooooooooooooooooooooooooooooooooooooo >
+ ----------------------------------------
+        \\   ^__^
+         \\  (oo)\\_______
+            (__)\\       )\\/\\
+                ||----w |
+                ||     ||`,
+            "font-family:monospace"
+        );
+    </script>
 </html>
